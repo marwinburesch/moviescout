@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import styles from './Header.module.css';
+import BackButton from '../BackButton/BackButton';
 
 type HeaderProps = {
   children: ReactNode;
@@ -7,9 +8,9 @@ type HeaderProps = {
 function Header({ children }: HeaderProps): JSX.Element {
   return (
     <div className={styles.headerContainer}>
-      <button className={styles.backBtn}>
+      <BackButton>
         <img src="src/assets/back.svg" />
-      </button>
+      </BackButton>
       <h1 className={styles.header}>
         {children}
         <span className={styles.headerDot}>.</span>

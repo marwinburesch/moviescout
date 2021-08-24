@@ -4,7 +4,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: poppins;
+  src: url(/swiftyfont/get_schwifty\ 2.ttf);
+}
+
 :root {
+  --header-font: 'poppins', sans-serif;
   --bg-primary: #111;
   --bg-secondary: #424242;
   --color-primary: #ffc700;

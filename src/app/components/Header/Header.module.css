@@ -1,8 +1,9 @@
 .header {
-  color: rgb(255, 255, 255);
+  color: var(--text-primary);
+  font-family: var(--header-font);
 }
 .headerDot {
-  color: #ffc700;
+  color: var(--color-primary);
 }
 .headerContainer {
   display: flex;
