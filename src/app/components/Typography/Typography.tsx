@@ -11,8 +11,8 @@ export default function Typography({
   children,
 }: TypographyProps): JSX.Element {
   if (size === 'm') {
-    return <h2>{children}</h2>;
+    return <h2 className={styles.headline2}>{children}</h2>;
   } else {
-    return <h1>{children}</h1>;
+    return <h1 className={styles.headline1}>{children}</h1>;
   }
 }
