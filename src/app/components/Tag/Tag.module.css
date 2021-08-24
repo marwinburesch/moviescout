@@ -1,0 +1,20 @@
+.tag {
+  border: none;
+  border-radius: 3em;
+  padding: 0.2em 1em;
+  text-transform: uppercase;
+}
+
+.active {
+  background: var(--color-primary);
+  color: var(--bg-primary);
+}
+
+.inactive {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.count {
+  padding-left: 0.5ch;
+}
