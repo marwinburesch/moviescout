@@ -1,0 +1,14 @@
+.header {
+  color: rgb(255, 255, 255);
+}
+.headerDot {
+  color: #ffc700;
+}
+.headerContainer {
+  display: flex;
+  gap: 1.5rem;
+}
+.backBtn {
+  border: none;
+  background-color: transparent;
+}
