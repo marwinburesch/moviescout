@@ -1,0 +1,8 @@
+.header {
+  color: var(--text-primary);
+  font-family: var(--font-family-header);
+}
+
+.dot {
+  color: var(--color-primary);
+}
