@@ -7,15 +7,12 @@ type HeaderProps = {
 };
 
 function Header({ children }: HeaderProps): JSX.Element {
-  // async function BackSvg({ children }:HeaderProps) {
   let backImage: string;
   if (children !== ' ') {
     backImage = 'src/assets/back.svg';
   } else {
     backImage = 'src/assets/backWhite.svg';
   }
-  //   return backImage
-  // }
 
   return (
     <div className={styles.headerContainer}>
