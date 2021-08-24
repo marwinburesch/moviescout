@@ -3,15 +3,30 @@ import styles from './Header.module.css';
 import BackButton from '../BackButton/BackButton';
 
 type HeaderProps = {
-  children: ReactNode;
+  children: ReactNode | null;
 };
+
 function Header({ children }: HeaderProps): JSX.Element {
+  // async function BackSvg({ children }:HeaderProps) {
+  let backImage: string;
+  if (children !== ' ') {
+    backImage = 'src/assets/back.svg';
+  } else {
+    backImage = 'src/assets/backWhite.svg';
+  }
+  //   return backImage
+  // }
+
   return (
     <div className={styles.headerContainer}>
-      {children && <BackButton>{<img src="src/assets/back.svg" />}</BackButton>}
+      {children && children !== 'TopFive' && (
+        <BackButton>{<img src={backImage} />}</BackButton>
+      )}
       <h1 className={styles.header}>
         {children}
-        <span className={styles.headerDot}>.</span>
+        {children && children !== ' ' && (
+          <span className={styles.headerDot}>.</span>
+        )}
       </h1>
     </div>
   );

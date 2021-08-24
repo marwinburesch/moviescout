@@ -7,5 +7,5 @@ export default {
 };
 
 export const TopFive = (): JSX.Element => <Header>TopFive</Header>;
-export const BackTopFive = (): JSX.Element => <Header>Search</Header>;
-export const Discover = (): JSX.Element => <Header> </Header>;
+export const Discover = (): JSX.Element => <Header>Discover</Header>;
+export const NoHeader = (): JSX.Element => <Header> </Header>;
