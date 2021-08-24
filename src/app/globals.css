@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-primary: #111;
+  --bg-secondary: #2a2a2a;
+  --color-primary: #ffc700;
+  --color-secondary: #2a2a2a;
+  --text-primary: #fff;
+  --text-secondary: #888;
+}
+
 body {
   margin: 0;
 }
