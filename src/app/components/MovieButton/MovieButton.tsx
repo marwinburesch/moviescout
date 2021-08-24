@@ -42,7 +42,7 @@ const MovieButton = ({ iconType }: MovieButtonProps): JSX.Element => {
     ),
   };
 
-  return <div>{iconStateMap[iconType]}</div>;
+  return <>{iconStateMap[iconType]}</>;
 };
 
 export default MovieButton;
