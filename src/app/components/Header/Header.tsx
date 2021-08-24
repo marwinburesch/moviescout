@@ -8,9 +8,7 @@ type HeaderProps = {
 function Header({ children }: HeaderProps): JSX.Element {
   return (
     <div className={styles.headerContainer}>
-      <BackButton>
-        <img src="src/assets/back.svg" />
-      </BackButton>
+      {children && <BackButton>{<img src="src/assets/back.svg" />}</BackButton>}
       <h1 className={styles.header}>
         {children}
         <span className={styles.headerDot}>.</span>

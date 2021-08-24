@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: poppins;
-  src: url(/swiftyfont/get_schwifty\ 2.ttf);
+  src: url(src/assets/Poppins-Medium.ttf);
 }
 
 :root {
