@@ -1,19 +1,7 @@
 import React from 'react';
 import MovieButton from './MovieButton';
 import { Story } from '@storybook/react';
-
-type MovieButtonProps = {
-  iconType:
-    | 'searchActive'
-    | 'searchInactive'
-    | 'homeActive'
-    | 'homeInactive'
-    | 'starActive'
-    | 'starHalfActive'
-    | 'starInactive'
-    | 'bookmarkActive'
-    | 'bookmarkInactive';
-};
+import type { MovieButtonProps } from './MovieButton';
 
 export default {
   title: 'Component/MovieButton',
@@ -38,8 +26,23 @@ export default {
 
 const Template: Story<MovieButtonProps> = (args) => <MovieButton {...args} />;
 
-export const Primary = Template.bind({});
-
-Primary.args = {
+export const HomeIcon = Template.bind({});
+HomeIcon.args = {
   iconType: 'homeActive',
+};
+
+export const Bookmark = Template.bind({});
+Bookmark.args = {
+  iconType: 'bookmarkActive',
+};
+
+export const Star = Template.bind({});
+Star.args = {
+  iconType: 'starActive',
+};
+
+// TODO find out why this defaults to star
+export const SearchIcon = Template.bind({});
+SearchIcon.args = {
+  iconType: 'searchActive',
 };

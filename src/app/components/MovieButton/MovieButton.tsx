@@ -4,7 +4,7 @@ import HomeIcon from '../assets/HomeIcon';
 import SearchIcon from '../assets/SearchIcon';
 import StarIcon from '../assets/StarIcon';
 
-type MovieButtonProps = {
+export type MovieButtonProps = {
   iconType:
     | 'searchActive'
     | 'searchInactive'
