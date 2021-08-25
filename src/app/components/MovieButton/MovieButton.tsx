@@ -22,7 +22,7 @@ const MovieButton = ({
   };
 
   const inactive = {
-    fill: 'var(--text-primary)',
+    fill: iconType !== 'bookmark' ? 'var(--text-primary)' : 'transparent',
     stroke: 'var(--text-primary)',
   };
 
