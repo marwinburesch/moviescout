@@ -7,11 +7,21 @@ export default {
 };
 
 export const ActiveCount = (): JSX.Element => (
-  <Tag active count="8">
+  <Tag active count="8" onClick={() => alert('Test')}>
     Hallo
   </Tag>
 );
-export const ActiveNoCount = (): JSX.Element => <Tag active>Hallo</Tag>;
+export const ActiveNoCount = (): JSX.Element => (
+  <Tag active onClick={() => alert('Test')}>
+    Hallo
+  </Tag>
+);
 
-export const InactiveCount = (): JSX.Element => <Tag count="8">Hallo</Tag>;
-export const InactiveNoCount = (): JSX.Element => <Tag>Hallo</Tag>;
+export const InactiveCount = (): JSX.Element => (
+  <Tag count="8" onClick={() => alert('Test')}>
+    Hallo
+  </Tag>
+);
+export const InactiveNoCount = (): JSX.Element => (
+  <Tag onClick={() => alert('Test')}>Hallo</Tag>
+);
