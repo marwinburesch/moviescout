@@ -6,13 +6,5 @@ export default {
   component: BackButton,
 };
 
-export const Backyellow = (): JSX.Element => (
-  <BackButton>
-    <img src="src/assets/back.svg" />
-  </BackButton>
-);
-export const BackBlack = (): JSX.Element => (
-  <BackButton>
-    <img src="src/assets/back.svg" />
-  </BackButton>
-);
+export const Backyellow = (): JSX.Element => <BackButton isHighlighted />;
+export const BackBlack = (): JSX.Element => <BackButton />;
