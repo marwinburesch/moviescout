@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import BookmarkIcon from '../assets/BookmarkIcon';
 import HomeIcon from '../assets/HomeIcon';
 import SearchIcon from '../assets/SearchIcon';
@@ -6,18 +6,16 @@ import SearchIcon from '../assets/SearchIcon';
 export type MovieButtonProps = {
   iconType: 'search' | 'home' | 'bookmark';
   onHandleButtonClick: () => void;
+  toggleActiveState: () => void;
+  isActive: boolean;
 };
 
 const MovieButton = ({
+  isActive,
   iconType,
   onHandleButtonClick,
+  toggleActiveState,
 }: MovieButtonProps): JSX.Element => {
-  const [isActive, setIsActive] = useState<boolean>(true);
-
-  const toggleActiveState = () => {
-    setIsActive(!isActive);
-  };
-
   const active = {
     fill: 'var(--color-primary)',
     stroke: 'var(--color-primary)',

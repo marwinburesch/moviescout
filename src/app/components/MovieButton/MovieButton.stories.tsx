@@ -11,6 +11,10 @@ export default {
       options: ['search', 'home', 'bookmark'],
       control: { type: 'select' },
     },
+    isActive: {
+      options: [true, false],
+      control: { type: 'boolean' },
+    },
   },
 };
 
@@ -19,15 +23,18 @@ const Template: Story<MovieButtonProps> = (args) => <MovieButton {...args} />;
 export const HomeIcon = Template.bind({});
 HomeIcon.args = {
   iconType: 'home',
+  isActive: true,
 };
 
 export const Bookmark = Template.bind({});
 Bookmark.args = {
   iconType: 'bookmark',
+  isActive: true,
 };
 
 // TODO find out why this defaults to star
 export const SearchIcon = Template.bind({});
 SearchIcon.args = {
   iconType: 'search',
+  isActive: true,
 };
