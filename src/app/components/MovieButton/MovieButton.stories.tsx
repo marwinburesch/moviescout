@@ -32,7 +32,6 @@ Bookmark.args = {
   isActive: true,
 };
 
-// TODO find out why this defaults to star
 export const SearchIcon = Template.bind({});
 SearchIcon.args = {
   iconType: 'search',
