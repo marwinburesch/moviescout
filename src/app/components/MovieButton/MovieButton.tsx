@@ -6,7 +6,6 @@ import SearchIcon from '../assets/SearchIcon';
 export type MovieButtonProps = {
   iconType: 'search' | 'home' | 'bookmark';
   onButtonClick: () => void;
-  toggleActiveState: () => void;
   isActive: boolean;
 };
 
@@ -14,7 +13,6 @@ const MovieButton = ({
   isActive,
   iconType,
   onButtonClick,
-  toggleActiveState,
 }: MovieButtonProps): JSX.Element => {
   const active = {
     fill: 'var(--color-primary)',
@@ -38,14 +36,7 @@ const MovieButton = ({
 
   return (
     <>
-      <a
-        onClick={() => {
-          toggleActiveState();
-          onButtonClick();
-        }}
-      >
-        {iconStateMap[iconType]}
-      </a>
+      <a onClick={onButtonClick}>{iconStateMap[iconType]}</a>
     </>
   );
 };
