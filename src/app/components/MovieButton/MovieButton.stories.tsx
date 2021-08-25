@@ -11,10 +11,6 @@ export default {
       options: ['search', 'home', 'bookmark'],
       control: { type: 'select' },
     },
-    isActive: {
-      options: [true, false],
-      control: { type: 'boolean' },
-    },
   },
 };
 
