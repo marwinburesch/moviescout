@@ -13,7 +13,7 @@ function Navigation(): JSX.Element {
   };
 
   const inactive = {
-    fill: 'transparent',
+    fill: activeLink !== 'search' ? 'var(--text-primary)' : 'transparent',
     stroke: 'var(--text-primary)',
   };
 
