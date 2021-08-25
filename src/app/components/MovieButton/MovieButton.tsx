@@ -9,9 +9,13 @@ type icons = 'search' | 'home' | 'star' | 'bookmark';
 
 export type MovieButtonProps = {
   iconType: `${icons}${states}` | 'starHalfActive';
+  onHandleButtonClick: () => void;
 };
 
-const MovieButton = ({ iconType }: MovieButtonProps): JSX.Element => {
+const MovieButton = ({
+  iconType,
+  onHandleButtonClick,
+}: MovieButtonProps): JSX.Element => {
   const active = {
     fill: 'var(--color-primary)',
     stroke: 'var(--color-primary)',
@@ -34,7 +38,11 @@ const MovieButton = ({ iconType }: MovieButtonProps): JSX.Element => {
     bookmarkInactive: <BookmarkIcon {...inactive} />,
   };
 
-  return <>{iconStateMap[iconType]}</>;
+  return (
+    <>
+      <button onClick={onHandleButtonClick}>{iconStateMap[iconType]}</button>
+    </>
+  );
 };
 
 export default MovieButton;
