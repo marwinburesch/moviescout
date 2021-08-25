@@ -15,7 +15,7 @@ function Header({
   isHighlighted = false,
 }: HeaderProps): JSX.Element {
   return (
-    <div
+    <header
       className={`${styles.headerContainer} ${children ? '' : styles.flagGap}`}
     >
       {withBackButton && <BackButton isHighlighted={isHighlighted} />}
@@ -26,7 +26,7 @@ function Header({
         </h1>
       )}
       {!children && <FlagButton />}
-    </div>
+    </header>
   );
 }
 
