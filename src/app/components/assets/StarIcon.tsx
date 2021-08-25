@@ -10,26 +10,26 @@ const StarIcon = (
   const iconStateMap = {
     active: (
       <linearGradient id="grad1">
-        <stop offset="100%" stop-color="var(--color-primary)" />
-        <stop offset="100%" stop-color="var(--color-primary)" />
-        <stop offset="50%" stop-color="var(--text-secondary)" />
-        <stop offset="100%" stop-color="var(--text-secondary)" />
+        <stop offset="100%" stopColor="var(--color-primary)" />
+        <stop offset="100%" stopColor="var(--color-primary)" />
+        <stop offset="50%" stopColor="var(--text-secondary)" />
+        <stop offset="100%" stopColor="var(--text-secondary)" />
       </linearGradient>
     ),
     inactive: (
       <linearGradient id="grad1">
-        <stop offset="0%" stop-color="var(--color-primary)" />
-        <stop offset="0%" stop-color="var(--color-primary)" />
-        <stop offset="0%" stop-color="var(--text-secondary)" />
-        <stop offset="100%" stop-color="var(--text-secondary)" />
+        <stop offset="0%" stopColor="var(--color-primary)" />
+        <stop offset="0%" stopColor="var(--color-primary)" />
+        <stop offset="0%" stopColor="var(--text-secondary)" />
+        <stop offset="100%" stopColor="var(--text-secondary)" />
       </linearGradient>
     ),
     halfActive: (
       <linearGradient id="grad1">
-        <stop offset="0%" stop-color="var(--color-primary)" />
-        <stop offset="50%" stop-color="var(--color-primary)" />
-        <stop offset="50%" stop-color="var(--text-secondary)" />
-        <stop offset="100%" stop-color="var(--text-secondary)" />
+        <stop offset="0%" stopColor="var(--color-primary)" />
+        <stop offset="50%" stopColor="var(--color-primary)" />
+        <stop offset="50%" stopColor="var(--text-secondary)" />
+        <stop offset="100%" stopColor="var(--text-secondary)" />
       </linearGradient>
     ),
   };

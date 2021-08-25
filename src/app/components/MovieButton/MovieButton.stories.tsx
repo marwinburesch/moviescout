@@ -1,32 +1,45 @@
 import React from 'react';
 import MovieButton from './MovieButton';
+import { Story } from '@storybook/react';
+
+type MovieButtonProps = {
+  iconType:
+    | 'searchActive'
+    | 'searchInactive'
+    | 'homeActive'
+    | 'homeInactive'
+    | 'starActive'
+    | 'starHalfActive'
+    | 'starInactive'
+    | 'bookmarkActive'
+    | 'bookmarkInactive';
+};
 
 export default {
   title: 'Component/MovieButton',
   component: MovieButton,
   argTypes: {
-    variant: {
-      options: ['primary', 'secondary'],
+    iconType: {
+      options: [
+        'searchActive',
+        'searchInactive',
+        'homeActive',
+        'homeInactive',
+        'starActive',
+        'starHalfActive',
+        'starInactive',
+        'bookmarkActive',
+        'bookmarkInactive',
+      ],
+      control: { type: 'select' },
     },
   },
 };
 
-export const BookmarkActive = (): JSX.Element => (
-  <MovieButton iconType="searchActive" />
-);
+const Template: Story<MovieButtonProps> = (args) => <MovieButton {...args} />;
 
-export const BookmarkInactive = (): JSX.Element => (
-  <MovieButton iconType="searchInactive" />
-);
+export const Primary = Template.bind({});
 
-export const StarActive = (): JSX.Element => (
-  <MovieButton iconType="starActive" />
-);
-
-export const StarInactive = (): JSX.Element => (
-  <MovieButton iconType="starInactive" />
-);
-
-export const StarHalfActive = (): JSX.Element => (
-  <MovieButton iconType="starHalfActive" />
-);
+Primary.args = {
+  iconType: 'homeActive',
+};
