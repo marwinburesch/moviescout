@@ -10,7 +10,7 @@
 }
 
 :root {
-  --header-font: 'poppins', sans-serif;
+  --primary-font: 'poppins', sans-serif;
   --bg-primary: #111;
   --bg-secondary: #424242;
   --color-primary: #ffc700;
