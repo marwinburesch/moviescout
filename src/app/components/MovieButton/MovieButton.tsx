@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import BookmarkIcon from '../assets/BookmarkIcon';
 import HomeIcon from '../assets/HomeIcon';
 import SearchIcon from '../assets/SearchIcon';
-import StarIcon from '../assets/StarIcon';
 
 type icons = 'search' | 'home' | 'bookmark';
 
@@ -38,9 +37,6 @@ const MovieButton = ({
   const iconStateMap = {
     search: <SearchIcon {...getProps()} />,
     home: <HomeIcon {...getProps()} />,
-    // starActive: <StarIcon iconState="active" />,
-    // starInactive: <StarIcon iconState="inactive" />,
-    // starHalfActive: <StarIcon iconState="halfActive" />,
     bookmark: <BookmarkIcon {...getProps()} />,
   };
 
