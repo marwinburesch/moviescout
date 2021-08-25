@@ -27,7 +27,7 @@ const MovieButton = ({ iconType }: MovieButtonProps): JSX.Element => {
     searchInactive: <SearchIcon {...inactive} />,
     homeActive: <HomeIcon {...active} />,
     homeInactive: <HomeIcon {...inactive} />,
-    starActive: <StarIcon iconState="active" width="100" height="100" />,
+    starActive: <StarIcon iconState="active" />,
     starInactive: <StarIcon iconState="inactive" />,
     starHalfActive: <StarIcon iconState="halfActive" />,
     bookmarkActive: <BookmarkIcon {...active} />,
