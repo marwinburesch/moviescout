@@ -4,7 +4,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: poppins;
+  src: url(src/assets/Poppins-Medium.ttf);
+}
+
 :root {
+  --primary-font: 'poppins', sans-serif;
   --bg-primary: #111;
   --bg-secondary: #424242;
   --color-primary: #ffc700;
