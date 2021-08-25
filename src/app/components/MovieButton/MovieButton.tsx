@@ -3,10 +3,8 @@ import BookmarkIcon from '../assets/BookmarkIcon';
 import HomeIcon from '../assets/HomeIcon';
 import SearchIcon from '../assets/SearchIcon';
 
-type icons = 'search' | 'home' | 'bookmark';
-
 export type MovieButtonProps = {
-  iconType: `${icons}`;
+  iconType: 'search' | 'home' | 'bookmark';
   onHandleButtonClick: () => void;
 };
 
