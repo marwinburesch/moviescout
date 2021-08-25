@@ -7,5 +7,10 @@ export default {
 };
 
 export const TopFive = (): JSX.Element => <Header>TopFive</Header>;
-export const Discover = (): JSX.Element => <Header>Discover</Header>;
-export const NoHeader = (): JSX.Element => <Header> </Header>;
+export const Latest = (): JSX.Element => <Header>Latest</Header>;
+export const Discover = (): JSX.Element => (
+  <Header isHighlighted withBackButton>
+    Discover
+  </Header>
+);
+export const NoHeader = (): JSX.Element => <Header withBackButton />;
