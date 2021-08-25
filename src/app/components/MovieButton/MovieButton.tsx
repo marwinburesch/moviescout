@@ -31,7 +31,7 @@ const MovieButton = ({ iconType }: MovieButtonProps): JSX.Element => {
     homeInactive: (
       <HomeIcon fill="var(--text-primary)" stroke="var(--text-primary)" />
     ),
-    starActive: <StarIcon iconState="active" height="100px" />,
+    starActive: <StarIcon iconState="active" width="100" height="100" />,
     starInactive: <StarIcon iconState="inactive" />,
     starHalfActive: <StarIcon iconState="halfActive" />,
     bookmarkActive: (
