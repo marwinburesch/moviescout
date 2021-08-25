@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BookmarkIcon from '../assets/BookmarkIcon';
 import HomeIcon from '../assets/HomeIcon';
 import SearchIcon from '../assets/SearchIcon';
 import styles from './Navigation.module.css';
 
-function Navigation(): JSX.Element {
-  const [activeLink, setActiveLink] = useState<string>('home');
+type NavigationProps = {
+  activeLink: 'home' | 'search' | 'bookmark';
+};
+
+function Navigation({ activeLink }: NavigationProps): JSX.Element {
   const active = {
     fill: 'var(--color-primary)',
     stroke: 'var(--color-primary)',
@@ -19,51 +22,24 @@ function Navigation(): JSX.Element {
 
   return (
     <nav className={styles.navigation}>
-      <NavLink
-        to="/"
-        isActive={(match) => {
-          if (match) {
-            setActiveLink('home');
-            return true;
-          }
-          return false;
-        }}
-      >
+      <Link to="/">
         <HomeIcon
           className={styles.home}
           {...(activeLink === 'home' ? active : inactive)}
         />
-      </NavLink>
-      <NavLink
-        to="/search"
-        isActive={(match) => {
-          if (match) {
-            setActiveLink('search');
-            return true;
-          }
-          return false;
-        }}
-      >
+      </Link>
+      <Link to="/search">
         <SearchIcon
           className={styles.search}
           {...(activeLink === 'search' ? active : inactive)}
         />
-      </NavLink>
-      <NavLink
-        to="/bookmark"
-        isActive={(match) => {
-          if (match) {
-            setActiveLink('bookmark');
-            return true;
-          }
-          return false;
-        }}
-      >
+      </Link>
+      <Link to="/bookmark">
         <BookmarkIcon
           className={styles.bookmark}
           {...(activeLink === 'bookmark' ? active : inactive)}
         />
-      </NavLink>
+      </Link>
     </nav>
   );
 }
