@@ -1,0 +1,31 @@
+.navigation {
+  background-color: var(--bg-dark);
+  width: 100%;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navigation svg {
+  margin: 1.56rem;
+}
+
+.navigation .home {
+  height: 1.5rem;
+  width: auto;
+}
+
+.navigation .search {
+  height: 1.5rem;
+  width: auto;
+}
+
+.navigation .bookmark {
+  height: 1.6rem;
+  width: auto;
+}
+
+.navigation a {
+  color: var(--text-primary);
+}
