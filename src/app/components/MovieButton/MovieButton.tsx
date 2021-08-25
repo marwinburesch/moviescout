@@ -30,11 +30,7 @@ const MovieButton = ({
     bookmark: <BookmarkIcon {...(isActive ? active : inactive)} />,
   };
 
-  return (
-    <>
-      <a onClick={onButtonClick}>{iconStateMap[iconType]}</a>
-    </>
-  );
+  return <a onClick={onButtonClick}>{iconStateMap[iconType]}</a>;
 };
 
 export default MovieButton;
