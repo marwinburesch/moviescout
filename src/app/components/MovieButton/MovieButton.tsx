@@ -18,28 +18,26 @@ export type MovieButtonProps = {
 };
 
 const MovieButton = ({ iconType }: MovieButtonProps): JSX.Element => {
+  const active = {
+    fill: 'var(--color-primary)',
+    stroke: 'var(--color-primary)',
+  };
+
+  const inactive = {
+    fill: 'var(--text-primary)',
+    stroke: 'var(--text-primary)',
+  };
+
   const iconStateMap = {
-    searchActive: (
-      <SearchIcon fill="var(--color-primary)" stroke="var(--color-primary)" />
-    ),
-    searchInactive: (
-      <SearchIcon fill="var(--text-primary)" stroke="var(--text-primary)" />
-    ),
-    homeActive: (
-      <HomeIcon fill="var(--color-primary)" stroke="var(--color-primary)" />
-    ),
-    homeInactive: (
-      <HomeIcon fill="var(--text-primary)" stroke="var(--text-primary)" />
-    ),
+    searchActive: <SearchIcon {...active} />,
+    searchInactive: <SearchIcon {...inactive} />,
+    homeActive: <HomeIcon {...active} />,
+    homeInactive: <HomeIcon {...inactive} />,
     starActive: <StarIcon iconState="active" width="100" height="100" />,
     starInactive: <StarIcon iconState="inactive" />,
     starHalfActive: <StarIcon iconState="halfActive" />,
-    bookmarkActive: (
-      <BookmarkIcon fill="var(--color-primary)" stroke="var(--color-primary)" />
-    ),
-    bookmarkInactive: (
-      <BookmarkIcon fill="var(--text-primary)" stroke="var(--text-primary)" />
-    ),
+    bookmarkActive: <BookmarkIcon {...active} />,
+    bookmarkInactive: <BookmarkIcon {...inactive} />,
   };
 
   return <>{iconStateMap[iconType]}</>;
