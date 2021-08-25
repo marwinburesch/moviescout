@@ -4,18 +4,10 @@ import HomeIcon from '../assets/HomeIcon';
 import SearchIcon from '../assets/SearchIcon';
 import StarIcon from '../assets/StarIcon';
 
-export type MovieButtonProps = {
-  iconType:
-    | 'searchActive'
-    | 'searchInactive'
-    | 'homeActive'
-    | 'homeInactive'
-    | 'starActive'
-    | 'starHalfActive'
-    | 'starInactive'
-    | 'bookmarkActive'
-    | 'bookmarkInactive';
-};
+type states = 'Active' | 'Inactive' | 'HalfActive';
+type icons = 'search' | 'home' | 'star' | 'bookmark';
+
+export type MovieButtonProps = { iconType: `${icons}${states}` };
 
 const MovieButton = ({ iconType }: MovieButtonProps): JSX.Element => {
   const active = {
