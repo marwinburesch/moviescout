@@ -6,7 +6,4 @@ export default {
   component: Navigation,
 };
 
-export const NavigationDefault = (): JSX.Element => (
-  <Navigation/>
-);
-
+export const NavigationDefault = (): JSX.Element => <Navigation />;
