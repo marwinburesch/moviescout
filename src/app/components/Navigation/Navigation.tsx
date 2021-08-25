@@ -16,7 +16,6 @@ function Navigation({ activeLink }: NavigationProps): JSX.Element {
   };
 
   const inactive = {
-    fill: activeLink !== 'search' ? 'var(--text-primary)' : 'transparent',
     stroke: 'var(--text-primary)',
   };
 
