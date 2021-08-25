@@ -3,6 +3,8 @@
   border-radius: 3em;
   padding: 0.2em 1em;
   text-transform: uppercase;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .active {
@@ -10,11 +12,6 @@
   color: var(--bg-primary);
 }
 
-.inactive {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
 .count {
-  padding-left: 0.5ch;
+  padding-left: 0.5em;
 }
