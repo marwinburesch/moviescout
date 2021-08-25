@@ -24,14 +24,10 @@ const MovieButton = ({
     stroke: 'var(--text-primary)',
   };
 
-  const getProps = () => {
-    return isActive ? active : inactive;
-  };
-
   const iconStateMap = {
-    search: <SearchIcon {...getProps()} />,
-    home: <HomeIcon {...getProps()} />,
-    bookmark: <BookmarkIcon {...getProps()} />,
+    search: <SearchIcon {...(isActive ? active : inactive)} />,
+    home: <HomeIcon {...(isActive ? active : inactive)} />,
+    bookmark: <BookmarkIcon {...(isActive ? active : inactive)} />,
   };
 
   return (
