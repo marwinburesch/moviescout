@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BookmarkIcon from '../assets/BookmarkIcon';
 import HomeIcon from '../assets/HomeIcon';
 import SearchIcon from '../assets/SearchIcon';
 import StarIcon from '../assets/StarIcon';
 
-type states = 'Active' | 'Inactive';
-type icons = 'search' | 'home' | 'star' | 'bookmark';
+type icons = 'search' | 'home' | 'bookmark';
 
 export type MovieButtonProps = {
-  iconType: `${icons}${states}` | 'starHalfActive';
+  iconType: `${icons}`;
   onHandleButtonClick: () => void;
 };
 
@@ -16,6 +15,12 @@ const MovieButton = ({
   iconType,
   onHandleButtonClick,
 }: MovieButtonProps): JSX.Element => {
+  const [isActive, setIsActive] = useState<boolean>(true);
+
+  const toggleActiveState = () => {
+    setIsActive(!isActive);
+  };
+
   const active = {
     fill: 'var(--color-primary)',
     stroke: 'var(--color-primary)',
@@ -26,21 +31,29 @@ const MovieButton = ({
     stroke: 'var(--text-primary)',
   };
 
+  const getProps = () => {
+    return isActive ? active : inactive;
+  };
+
   const iconStateMap = {
-    searchActive: <SearchIcon {...active} />,
-    searchInactive: <SearchIcon {...inactive} />,
-    homeActive: <HomeIcon {...active} />,
-    homeInactive: <HomeIcon {...inactive} />,
-    starActive: <StarIcon iconState="active" />,
-    starInactive: <StarIcon iconState="inactive" />,
-    starHalfActive: <StarIcon iconState="halfActive" />,
-    bookmarkActive: <BookmarkIcon {...active} />,
-    bookmarkInactive: <BookmarkIcon {...inactive} />,
+    search: <SearchIcon {...getProps()} />,
+    home: <HomeIcon {...getProps()} />,
+    // starActive: <StarIcon iconState="active" />,
+    // starInactive: <StarIcon iconState="inactive" />,
+    // starHalfActive: <StarIcon iconState="halfActive" />,
+    bookmark: <BookmarkIcon {...getProps()} />,
   };
 
   return (
     <>
-      <button onClick={onHandleButtonClick}>{iconStateMap[iconType]}</button>
+      <a
+        onClick={() => {
+          toggleActiveState();
+          onHandleButtonClick();
+        }}
+      >
+        {iconStateMap[iconType]}
+      </a>
     </>
   );
 };

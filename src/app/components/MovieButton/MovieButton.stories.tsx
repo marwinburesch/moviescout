@@ -8,17 +8,7 @@ export default {
   component: MovieButton,
   argTypes: {
     iconType: {
-      options: [
-        'searchActive',
-        'searchInactive',
-        'homeActive',
-        'homeInactive',
-        'starActive',
-        'starHalfActive',
-        'starInactive',
-        'bookmarkActive',
-        'bookmarkInactive',
-      ],
+      options: ['search', 'home', 'bookmark'],
       control: { type: 'select' },
     },
   },
@@ -28,21 +18,16 @@ const Template: Story<MovieButtonProps> = (args) => <MovieButton {...args} />;
 
 export const HomeIcon = Template.bind({});
 HomeIcon.args = {
-  iconType: 'homeActive',
+  iconType: 'home',
 };
 
 export const Bookmark = Template.bind({});
 Bookmark.args = {
-  iconType: 'bookmarkActive',
-};
-
-export const Star = Template.bind({});
-Star.args = {
-  iconType: 'starActive',
+  iconType: 'bookmark',
 };
 
 // TODO find out why this defaults to star
 export const SearchIcon = Template.bind({});
 SearchIcon.args = {
-  iconType: 'searchActive',
+  iconType: 'search',
 };
