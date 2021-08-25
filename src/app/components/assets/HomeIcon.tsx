@@ -3,9 +3,9 @@ import React from 'react';
 const HomeIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
   return (
     <svg
-      width="18"
+      width="21"
       height="21"
-      viewBox="0 0 18 21"
+      viewBox="-1 0 22 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
