@@ -1,0 +1,17 @@
+.tag {
+  border: none;
+  border-radius: 3em;
+  padding: 0.2em 1em;
+  text-transform: uppercase;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.active {
+  background: var(--color-primary);
+  color: var(--bg-primary);
+}
+
+.count {
+  padding-left: 0.5em;
+}

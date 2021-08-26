@@ -1,0 +1,23 @@
+.header {
+  color: var(--text-primary);
+  font-family: var(--header-font);
+}
+.headerDot {
+  color: var(--color-primary);
+}
+.headerContainer {
+  display: flex;
+  gap: 1.5rem;
+  min-height: 2.5rem;
+}
+.flagGap {
+  justify-content: space-between;
+}
+.backBtn {
+  border: none;
+  background-color: transparent;
+}
+h1 {
+  margin: 0;
+  font-size: 1.7rem;
+}
