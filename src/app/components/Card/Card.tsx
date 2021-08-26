@@ -25,25 +25,30 @@ export default function Card({
   const [isBookmarkActive, setIsBookmarkActive] = useState(isBookmarked);
   return (
     <article className={styles.article}>
-      <div>
-        <MovieButton
-          iconType="bookmark"
-          isActive={isBookmarkActive}
-          onButtonClick={() => setIsBookmarkActive(!isBookmarkActive)}
-        ></MovieButton>
+      <div
+        className={styles.image}
+        style={{ backgroundImage: `url(${image})` }}
+      >
+        <div className={styles.bookmark}>
+          <MovieButton
+            iconType="bookmark"
+            isActive={isBookmarkActive}
+            onButtonClick={() => setIsBookmarkActive(!isBookmarkActive)}
+          ></MovieButton>
+        </div>
       </div>
       <div>
-        <p>{title}</p>
+        <p className={styles.title}>{title}</p>
         <div>
-          <p>{rating}</p>
+          {rating}
           <RatingIcon iconState="active" />
           <RatingIcon iconState="active" />
           <RatingIcon iconState="active" />
           <RatingIcon iconState="active" />
           <RatingIcon iconState="active" />
         </div>
-        <p>{genres.join(', ')}</p>
-        <p>{children}</p>
+        <p className={styles.genres}>{genres.join(', ')}</p>
+        <p className={styles.description}>{children}</p>
       </div>
     </article>
   );
