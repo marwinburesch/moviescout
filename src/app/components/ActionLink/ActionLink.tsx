@@ -4,13 +4,13 @@ import ChevronRightIcon from '../assets/ChevronRightIcon';
 
 export type ActionLinkProps = {
   children: React.ReactNode;
-  link: string;
+  url: string;
   hasIcon: boolean;
 };
 
 const ActionLink = ({
   children,
-  link,
+  url,
   hasIcon,
 }: ActionLinkProps): JSX.Element => {
   return (
@@ -18,7 +18,7 @@ const ActionLink = ({
       {hasIcon ? (
         <a
           className={`${styles.actionLink} ${styles.actionLinkWithIcon}`}
-          href={link}
+          href={url}
           target="_blank"
         >
           <span className={styles.title}>{children}</span>
@@ -29,7 +29,7 @@ const ActionLink = ({
           />
         </a>
       ) : (
-        <a className={styles.actionLink} href={link} target="_blank">
+        <a className={styles.actionLink} href={url} target="_blank">
           {children}
         </a>
       )}

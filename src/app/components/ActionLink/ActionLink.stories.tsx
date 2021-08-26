@@ -19,13 +19,13 @@ const Template: Story<ActionLinkProps> = (args) => <ActionLink {...args} />;
 export const IMDB = Template.bind({});
 IMDB.args = {
   children: 'See on IMDB',
-  link: 'https://www.imdb.com/',
+  url: 'https://www.imdb.com/',
   hasIcon: false,
 };
 
 export const RottenTomatoes = Template.bind({});
 RottenTomatoes.args = {
   children: 'See on Rotten Tomatoes',
-  link: 'https://www.rottentomatoes.com/',
+  url: 'https://www.rottentomatoes.com/',
   hasIcon: false,
 };
