@@ -2,4 +2,17 @@
   margin: 0;
   display: flex;
   gap: 0.5rem;
+  background-color: black;
+}
+
+.starContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+p {
+  font-size: 1.3rem;
+  font-family: var(--primary-font);
+  color: var(--text-primary);
 }
