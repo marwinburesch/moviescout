@@ -16,12 +16,20 @@ const ActionLink = ({
   return (
     <>
       {hasIcon ? (
-        <a className={styles.actionLink} href={link}>
-          {children}
-          <ChevronRightIcon width="12" height="12" />
+        <a
+          className={`${styles.actionLink} ${styles.actionLinkWithIcon}`}
+          href={link}
+          target="_blank"
+        >
+          <span className={styles.title}>{children}</span>
+          <ChevronRightIcon
+            className={styles.chevronRightIcon}
+            width="1.5rem"
+            height="1.5rem"
+          />
         </a>
       ) : (
-        <a className={styles.actionLink} href={link}>
+        <a className={styles.actionLink} href={link} target="_blank">
           {children}
         </a>
       )}
