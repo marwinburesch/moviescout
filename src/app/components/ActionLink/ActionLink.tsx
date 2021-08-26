@@ -14,26 +14,24 @@ const ActionLink = ({
   hasIcon,
 }: ActionLinkProps): JSX.Element => {
   return (
-    <>
+    <a
+      className={`${styles.actionLink} ${
+        hasIcon ? styles.actionLinkWithIcon : ''
+      }`}
+      href={url}
+      target="_blank"
+    >
+      <span className={styles.title}>{children}</span>
       {hasIcon ? (
-        <a
-          className={`${styles.actionLink} ${styles.actionLinkWithIcon}`}
-          href={url}
-          target="_blank"
-        >
-          <span className={styles.title}>{children}</span>
-          <ChevronRightIcon
-            className={styles.chevronRightIcon}
-            width="1.5rem"
-            height="1.5rem"
-          />
-        </a>
+        <ChevronRightIcon
+          className={styles.chevronRightIcon}
+          width="1.5rem"
+          height="1.5rem"
+        />
       ) : (
-        <a className={styles.actionLink} href={url} target="_blank">
-          {children}
-        </a>
+        ''
       )}
-    </>
+    </a>
   );
 };
 
