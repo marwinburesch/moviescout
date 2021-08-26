@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './Typography.module.css';
 
 type TypographyProps = {
   size: 'm' | 'l';
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function Typography({
