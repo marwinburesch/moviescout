@@ -3,6 +3,7 @@
   border-style: none;
   font-family: var(--primary-font);
   color: var(--text-primary);
+  width: 100%;
 }
 
 .searchBar__input::-webkit-search-cancel-button {
