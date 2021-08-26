@@ -6,6 +6,11 @@ import type { TagGroupProps } from './TagGroup';
 export default {
   title: 'Component/TagGroup',
   component: TagGroup,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
   argTypes: {},
 };
 
