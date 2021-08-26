@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ActionLink.module.css';
+import ChevronRightIcon from '../assets/ChevronRightIcon';
 
 export type ActionLinkProps = {
   children: React.ReactNode;
@@ -13,9 +14,18 @@ const ActionLink = ({
   hasIcon,
 }: ActionLinkProps): JSX.Element => {
   return (
-    <a className={styles.actionLink} href={link}>
-      {children}
-    </a>
+    <>
+      {hasIcon ? (
+        <a className={styles.actionLink} href={link}>
+          {children}
+          <ChevronRightIcon width="12" height="12" />
+        </a>
+      ) : (
+        <a className={styles.actionLink} href={link}>
+          {children}
+        </a>
+      )}
+    </>
   );
 };
 
