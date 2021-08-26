@@ -10,18 +10,14 @@ export default {
     },
   },
 };
-export const RatingStars = (): JSX.Element => (
-  <Rating rating={3.5} maxRating={5} />
-);
+export const RatingStars = (): JSX.Element => <Rating rating={3.5} />;
 
-export const RatingFiveStars = (): JSX.Element => (
-  <Rating rating={5} maxRating={5} />
-);
+export const RatingFiveStars = (): JSX.Element => <Rating rating={5} />;
 
 export const RatingGreaterStars = (): JSX.Element => (
   <Rating rating={8.5} maxRating={10} />
 );
 
-export const RatingSingelStar = (): JSX.Element => (
+export const RatingSingleStar = (): JSX.Element => (
   <Rating rating={3.5} maxRating={1} />
 );
