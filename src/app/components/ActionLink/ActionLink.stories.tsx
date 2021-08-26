@@ -11,9 +11,16 @@ export default {
 
 const Template: Story<ActionLinkProps> = (args) => <ActionLink {...args} />;
 
-export const ActionLinkStory = Template.bind({});
-ActionLinkStory.args = {
-  children: 'Google',
-  link: 'https://google.com',
-  hasIcon: true,
+export const IMDB = Template.bind({});
+IMDB.args = {
+  children: 'See on IMDB',
+  link: 'https://www.imdb.com/',
+  hasIcon: false,
+};
+
+export const RottenTomatoes = Template.bind({});
+RottenTomatoes.args = {
+  children: 'See on Rotten Tomatoes',
+  link: 'https://www.rottentomatoes.com/',
+  hasIcon: false,
 };
