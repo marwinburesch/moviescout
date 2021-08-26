@@ -6,6 +6,11 @@ import type { ActionLinkProps } from './ActionLink';
 export default {
   title: 'Component/ActionLink',
   component: ActionLink,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
   argTypes: {},
 };
 
