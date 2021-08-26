@@ -1,0 +1,14 @@
+h1,
+h2 {
+  margin: 0;
+}
+
+.headlineLarge {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.headlineMedium {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
