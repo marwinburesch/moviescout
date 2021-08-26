@@ -1,0 +1,15 @@
+.searchBar__input {
+  background-color: var(--bg-secondary);
+  border-style: none;
+  font-family: var(--primary-font);
+  color: var(--text-primary);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  background-color: var(--bg-secondary);
+  border-radius: 0.3em;
+}
