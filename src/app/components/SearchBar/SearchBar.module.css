@@ -10,21 +10,7 @@
   height: 1em;
   width: 1em;
   margin-left: 0.4em;
-  background: var(--text-primary);
-  clip-path: polygon(
-    8% 0,
-    0 8%,
-    40% 50%,
-    0 92%,
-    8% 100%,
-    50% 60%,
-    92% 100%,
-    100% 92%,
-    60% 50%,
-    100% 8%,
-    92% 0,
-    50% 40%
-  );
+  background: url('../assets/DeleteIcon.svg');
 }
 
 .container {
