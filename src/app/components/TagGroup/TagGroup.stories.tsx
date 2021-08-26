@@ -11,7 +11,6 @@ export default {
       default: 'dark',
     },
   },
-  argTypes: {},
 };
 
 const mockFunction = () => console.log('📽');
