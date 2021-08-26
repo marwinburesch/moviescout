@@ -4,6 +4,11 @@ import SearchBar from './SearchBar';
 export default {
   title: 'Component/SearchBar',
   component: SearchBar,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
 };
 
 export const Search = (): JSX.Element => (
