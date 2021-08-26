@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FlagIcon(
+export default function ChevronRightIcon(
   props: React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
