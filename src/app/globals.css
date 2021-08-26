@@ -1,7 +1,20 @@
+/* 
+Double @font-face declaration because we need
+two different weights for the same font family.
+
+This can be fixed by using a variable font
+*/
+
 @font-face {
   font-family: 'Poppins';
-  src: url('../../../assets/fonts/Poppins/Poppins-Regular.ttf'),
-    url('../../../assets/fonts/Poppins/Poppins-Bold.ttf');
+  src: url('assets/font/Poppins-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/font/Poppins-Bold.ttf');
+  font-weight: 800;
 }
 
 *,
