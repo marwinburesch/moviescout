@@ -6,4 +6,6 @@ export default {
   component: Navigation,
 };
 
-export const NavigationDefault = (): JSX.Element => <Navigation />;
+export const Home = (): JSX.Element => <Navigation activeLink="home" />;
+export const Search = (): JSX.Element => <Navigation activeLink="search" />;
+export const Bookmark = (): JSX.Element => <Navigation activeLink="bookmark" />;
