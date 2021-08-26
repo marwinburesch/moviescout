@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './Rating.module.css';
 import RatingIcon from '../RatingIcon/RatingIcon';
 
-type RatingProps = { rating: number };
+type RatingProps = { rating: number; maxRating?: number };
 
-function Rating({ rating }: RatingProps): JSX.Element {
+function Rating({ rating, maxRating = 5 }: RatingProps): JSX.Element {
   return (
     <section className={styles.rating}>
       <p>{rating}</p>
       <div className={styles.starContainer}>
-        {[1, 2, 3, 4, 5].map((value) => {
+        {Array.from({ length: maxRating }, (_, i) => i + 1).map((value) => {
           let starStatus: 'active' | 'inactive' | 'halfActive';
           if (value < rating + 1) {
             if (rating % 1 === 0 || rating > value) {
@@ -27,4 +27,3 @@ function Rating({ rating }: RatingProps): JSX.Element {
   );
 }
 export default Rating;
-
