@@ -6,11 +6,11 @@ export default {
   component: Typography,
 };
 
-export const Headline1 = (): JSX.Element => (
+export const Large = (): JSX.Element => (
   <Typography size="l">Discover</Typography>
 );
 
-export const Headline2 = (): JSX.Element => (
+export const Medium = (): JSX.Element => (
   <Typography size="m">Gunpowder Milkshake</Typography>
 );
 
