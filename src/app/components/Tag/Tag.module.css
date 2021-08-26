@@ -1,10 +1,11 @@
 .tag {
   border: none;
   border-radius: 3em;
-  padding: 0.2em 1em;
+  padding: 0.7em 1.5em;
   text-transform: uppercase;
   background: var(--bg-secondary);
   color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .active {
