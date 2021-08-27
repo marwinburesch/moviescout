@@ -4,6 +4,11 @@ import Card from './Card';
 export default {
   title: 'Component/Card',
   component: Card,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
 };
 
 export const DetailCard = (): JSX.Element => {
