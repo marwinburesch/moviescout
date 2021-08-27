@@ -10,6 +10,7 @@ export type CardProps = {
   genres: string[];
   image: string | null;
   isBookmarked?: boolean;
+  onBookmarkClick: () => void;
   children: React.ReactNode;
 };
 
@@ -20,11 +21,11 @@ export default function Card({
   genres,
   image,
   isBookmarked = false,
+  onBookmarkClick,
   children,
 }: CardProps): JSX.Element {
-  const [isBookmarkActive, setIsBookmarkActive] = useState(isBookmarked);
   return (
-    <article className={styles.article}>
+    <article className={`${styles.article} ${styles[`article--${layout}`]}`}>
       <div
         className={styles.image}
         style={{ backgroundImage: `url(${image})` }}
@@ -32,8 +33,8 @@ export default function Card({
         <div className={styles.bookmark}>
           <MovieButton
             iconType="bookmark"
-            isActive={isBookmarkActive}
-            onButtonClick={() => setIsBookmarkActive(!isBookmarkActive)}
+            isActive={isBookmarked}
+            onButtonClick={onBookmarkClick}
           ></MovieButton>
         </div>
       </div>
@@ -47,8 +48,13 @@ export default function Card({
           <RatingIcon iconState="active" />
           <RatingIcon iconState="active" />
         </div>
-        <p className={styles.genres}>{genres.join(', ')}</p>
-        <p className={styles.description}>{children}</p>
+        {layout === 'detail' && (
+          <>
+            <p className={styles.genres}>{genres.join(', ')}</p>
+
+            <p className={styles.description}>{children}</p>
+          </>
+        )}
       </div>
     </article>
   );
