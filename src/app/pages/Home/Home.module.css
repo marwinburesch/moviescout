@@ -46,5 +46,6 @@
 
 .latestContainer {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
 }
