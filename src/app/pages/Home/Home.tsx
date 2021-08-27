@@ -146,7 +146,13 @@ function home(): JSX.Element {
 
         <section className={styles.topFiveCards}>
           {topFiveCards.map((card) => {
-            return <Card {...card} onBookmarkClick={handleTopFiveClick} />;
+            return (
+              <Card
+                key={card.title}
+                {...card}
+                onBookmarkClick={handleTopFiveClick}
+              />
+            );
           })}
         </section>
 
@@ -159,7 +165,13 @@ function home(): JSX.Element {
           </div>
           <div className={styles.latestContainer}>
             {latestCards.map((card) => {
-              return <Card {...card} onBookmarkClick={handleLatestClick} />;
+              return (
+                <Card
+                  key={card.title}
+                  {...card}
+                  onBookmarkClick={handleLatestClick}
+                />
+              );
             })}
           </div>
         </section>
