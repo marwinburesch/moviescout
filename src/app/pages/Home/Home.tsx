@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
 import styles from './Home.module.css';
+import { Link } from 'react-router-dom';
 
 function home(): JSX.Element {
   return (
@@ -71,7 +72,9 @@ function home(): JSX.Element {
         <section className={styles.cardCompact}>
           <div className={styles.latestHeader}>
             <Header>Latest</Header>
-            <div className={styles.seeMore}>See more</div>
+            <div className={styles.seeMore}>
+              <Link to="/discover">See more</Link>
+            </div>
           </div>
           <div className={styles.latestContainer}>
             <Card
@@ -96,8 +99,12 @@ function home(): JSX.Element {
               isBookmarked={false}
               onBookmarkClick={() => console.log('Hi')}
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Explicabo, soluta!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              officia illum, explicabo laboriosam maxime beatae reiciendis alias
+              doloremque! Quis minima, repellendus tempore, autem tempora atque
+              excepturi iusto distinctio vel repellat amet ea, at reprehenderit
+              unde hic commodi cumque facere eaque ab! Nostrum aperiam dolore
+              laboriosam eaque in. Quis, recusandae repellat!
             </Card>
             <Card
               layout="detail"
@@ -108,8 +115,12 @@ function home(): JSX.Element {
               isBookmarked={false}
               onBookmarkClick={() => console.log('Hi')}
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Explicabo, soluta!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              officia illum, explicabo laboriosam maxime beatae reiciendis alias
+              doloremque! Quis minima, repellendus tempore, autem tempora atque
+              excepturi iusto distinctio vel repellat amet ea, at reprehenderit
+              unde hic commodi cumque facere eaque ab! Nostrum aperiam dolore
+              laboriosam eaque in. Quis, recusandae repellat!
             </Card>
             <Card
               layout="detail"
@@ -120,8 +131,12 @@ function home(): JSX.Element {
               isBookmarked={false}
               onBookmarkClick={() => console.log('Hi')}
             >
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Explicabo, soluta!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+              officia illum, explicabo laboriosam maxime beatae reiciendis alias
+              doloremque! Quis minima, repellendus tempore, autem tempora atque
+              excepturi iusto distinctio vel repellat amet ea, at reprehenderit
+              unde hic commodi cumque facere eaque ab! Nostrum aperiam dolore
+              laboriosam eaque in. Quis, recusandae repellat!
             </Card>
           </div>
         </section>
