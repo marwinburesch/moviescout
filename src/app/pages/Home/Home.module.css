@@ -1,0 +1,50 @@
+.container {
+  background-color: var(--bg-primary);
+  display: grid;
+  height: 100vh;
+}
+
+.innerContainer {
+  margin-left: 1rem;
+  overflow: scroll;
+}
+
+.header {
+  padding: 2rem 0 1.25rem 0;
+}
+
+.latestHeader {
+  padding: 2rem 0 1.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seeMore {
+  font-family: var(--font-face);
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.cardCompact {
+  margin-right: 1rem;
+}
+
+.topFiveCards {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px 1fr));
+  grid-auto-columns: minmax(200px, 1fr);
+  margin-right: 1rem;
+}
+
+.topFiveCards::-webkit-scrollbar {
+  display: none;
+}
+
+.latestContainer {
+  display: grid;
+  gap: 1rem;
+}
