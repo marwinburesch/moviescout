@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './SearchBar.module.css';
 import SearchIcon from '../assets/SearchIcon';
+import styles from './SearchBar.module.css';
 
 type SearchBarProps = {
   searchResult: string;
-  handleSubmit: () => void;
+  handleSubmit: (event: React.FormEvent) => void;
   setSearchResult: (searchResult: string) => void;
 };
 
