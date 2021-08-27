@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styles from './Header.module.css';
 import BackButton from '../BackButton/BackButton';
-import FlagButton from '../FlagButton/FlagButton';
+import BookmarkIcon from '../assets/BookmarkIcon';
 
 type HeaderProps = {
   children?: ReactNode;
@@ -25,7 +25,15 @@ function Header({
           <span className={styles.headerDot}>.</span>
         </h1>
       )}
-      {!children && <FlagButton />}
+      {!children && (
+        <BookmarkIcon
+          className={styles.bookmarkIcon}
+          fill="transparent"
+          stroke="#fff"
+          height="28"
+          width="28"
+        />
+      )}
     </header>
   );
 }
