@@ -43,85 +43,93 @@ const tags = [
 const mockMovies: CardProps[] = [
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
-    genres: [''],
-    image: null,
+    title: 'Findet Nemo',
+    genres: ['Animation'],
+    image:
+      'https://images-na.ssl-images-amazon.com/images/I/71EZScEcWuL._RI_.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
+    title: 'Resident Evil',
     genres: [''],
-    image: null,
+    image: 'https://m.media-amazon.com/images/I/510hYySJ6HL._AC_.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
-    genres: [''],
-    image: null,
+    title: 'Hero',
+    genres: ['Adventure', 'Action', 'History'],
+    image:
+      'https://m.media-amazon.com/images/M/MV5BMWQ2MjQ0OTctMWE1OC00NjZjLTk3ZDAtNTk3NTZiYWMxYTlmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
+    title: 'Avatar',
     genres: [''],
-    image: null,
+    image: 'https://m.media-amazon.com/images/I/41zWyLXIetL._AC_.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
+    title: 'Fight Club',
     genres: [''],
-    image: null,
+    image: 'https://m.media-amazon.com/images/I/51JyX1NtDfL._AC_.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
+    title: 'Ben Hur',
     genres: [''],
-    image: null,
+    image: 'https://m.media-amazon.com/images/I/51J69UGeCjL._AC_.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
+    title: 'Vier Fäuste für ein Halleluja',
     genres: [''],
-    image: null,
+    image: 'https://m.media-amazon.com/images/I/51PZ7G0YMTL.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
   {
     layout: 'compact',
-    title: 'Real long Movie Title Number 1',
+    title: 'Adams Family',
     genres: [''],
-    image: null,
+    image: 'https://m.media-amazon.com/images/I/510cRdkFSXL._AC_SY450_.jpg',
     onBookmarkClick: () => console.log(''),
     rating: 3.5,
-    children: 'bliblablu',
+    children: '',
   },
 ];
 
 export default function Discover(): JSX.Element {
   return (
     <main className={styles.container}>
-      <Header withBackButton isHighlighted>
-        Discover
-      </Header>
-      <TagGroup tagList={tags} />
+      <section className={styles.topSection}>
+        <div className={styles.header}>
+          <Header withBackButton isHighlighted>
+            Discover
+          </Header>
+        </div>
+        <div className={styles.tagGroup}>
+          <TagGroup tagList={tags} />
+        </div>
+      </section>
       <div className={styles.cardWrapper}>
         {mockMovies.length !== 0 &&
           mockMovies.map((movie) => <Card {...movie} />)}
