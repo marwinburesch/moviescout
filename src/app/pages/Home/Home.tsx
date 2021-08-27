@@ -1,74 +1,157 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
+import type { CardProps } from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 
 function home(): JSX.Element {
+  const mockLatestCards: CardProps[] = [
+    {
+      layout: 'detail',
+      title: 'Inside',
+      rating: 2.5,
+      genres: ['Action'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+    {
+      layout: 'detail',
+      title: 'Ted',
+      rating: 3.0,
+      genres: ['Comedy'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image:
+        'https://lh3.googleusercontent.com/proxy/PYYVWG85Gnr1TNrjy2gZPorvShitwCTYwV-Q60tMoqRYCIQN-oisJLJ6htkJiZAfTe37eIV8Yh8oe6vhhe5ck0JUBLD7FcswqJYSwbW-Q9o5C4b9',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+    {
+      layout: 'detail',
+      title: 'Snowpiercer',
+      rating: 3.5,
+      genres: ['Thriller'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image: 'https://de.web.img2.acsta.net/pictures/14/02/13/11/38/183661.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+    {
+      layout: 'detail',
+      title: 'Interstellar',
+      rating: 4.0,
+      genres: ['Action'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image: 'https://images-na.ssl-images-amazon.com/images/I/91kFYg4fX3L.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+  ];
+
+  const mockTopCards: CardProps[] = [
+    {
+      layout: 'wide',
+      title: 'Inside',
+      rating: 4.5,
+      genres: ['Comedy'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+    {
+      layout: 'wide',
+      title: 'Inside',
+      rating: 0.5,
+      genres: ['Action'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+    {
+      layout: 'wide',
+      title: 'Inside',
+      rating: 1.5,
+      genres: ['Action'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+    {
+      layout: 'wide',
+      title: 'Inside',
+      rating: 2.5,
+      genres: ['Action'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+    {
+      layout: 'wide',
+      title: 'Inside',
+      rating: 3.5,
+      genres: ['Action'],
+      children:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      isBookmarked: false,
+      onBookmarkClick: () => handleBookmarkClick(),
+    },
+  ];
+
+  const [latestCards, setLatestCards] = useState<CardProps[]>(mockLatestCards);
+
+  const [topCards, setTopCards] = useState<CardProps[]>(mockTopCards);
+
+  function handleBookmarkClick() {
+    console.log('object');
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
         <div className={styles.header}>
           <Header>Top Five</Header>
         </div>
+
         <section className={styles.topFiveCards}>
-          <Card
-            layout="wide"
-            title="Inside"
-            rating={2.5}
-            genres={['action']}
-            image="https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg"
-            isBookmarked={false}
-            onBookmarkClick={() => console.log('Hi')}
-          >
-            ...
-          </Card>
-          <Card
-            layout="wide"
-            title="Interstellar"
-            rating={4.0}
-            genres={['action']}
-            image="https://m.media-amazon.com/images/I/A1JVqNMI7UL._SL1500_.jpg"
-            isBookmarked={false}
-            onBookmarkClick={() => console.log('Hi')}
-          >
-            ...
-          </Card>
-          <Card
-            layout="wide"
-            title="Fear and Loathing in Las Vegas"
-            rating={3.0}
-            genres={['action']}
-            image="https://m.media-amazon.com/images/I/51xwUF92c4L.jpg"
-            isBookmarked={false}
-            onBookmarkClick={() => console.log('Hi')}
-          >
-            ...
-          </Card>
-          <Card
-            layout="wide"
-            title="Snowpiercer"
-            rating={3.5}
-            genres={['action']}
-            image="https://de.web.img2.acsta.net/pictures/14/02/13/11/38/183661.jpg"
-            isBookmarked={false}
-            onBookmarkClick={() => console.log('Hi')}
-          >
-            ...
-          </Card>
-          <Card
-            layout="wide"
-            title="Deadpool"
-            rating={4.5}
-            genres={['action']}
-            image="https://m.media-amazon.com/images/I/51owAmcQ1jL._AC_.jpg"
-            isBookmarked={false}
-            onBookmarkClick={() => console.log('Hi')}
-          >
-            ...
-          </Card>
+          {topCards.map((card) => {
+            return (
+              <Card
+                layout={card.layout}
+                title={card.title}
+                rating={card.rating}
+                genres={card.genres}
+                image={card.image}
+                isBookmarked={card.isBookmarked}
+                onBookmarkClick={card.onBookmarkClick}
+              >
+                {card.children}
+              </Card>
+            );
+          })}
         </section>
+
         <section className={styles.cardCompact}>
           <div className={styles.latestHeader}>
             <Header>Latest</Header>
@@ -77,67 +160,21 @@ function home(): JSX.Element {
             </div>
           </div>
           <div className={styles.latestContainer}>
-            <Card
-              layout="detail"
-              title="Ted"
-              rating={4.5}
-              genres={['Comedy']}
-              image="https://lh3.googleusercontent.com/proxy/gaEetQt9_9Q3mwnDVhmR881eCaa-C4OfWdp--o5vvuvLetGKfI52xJMvBaAZnQQS36kIIsp7fluigkje7vCHW0cIMN3O01Z_PvNoSvJ5_hTIa8q6"
-              isBookmarked={false}
-              onBookmarkClick={() => console.log('Hi')}
-            >
-              John Bennett, a man whose childhood wish of bringing his teddy
-              bear to life came true, now must decide between keeping the
-              relationship with the bear, Ted or his girlfriend, Lori.
-            </Card>
-            <Card
-              layout="detail"
-              title="Grand Budapest Hotel"
-              rating={4.0}
-              genres={['action']}
-              image="https://m.media-amazon.com/images/I/71uQuT3t47L._SL1200_.jpg"
-              isBookmarked={false}
-              onBookmarkClick={() => console.log('Hi')}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-              officia illum, explicabo laboriosam maxime beatae reiciendis alias
-              doloremque! Quis minima, repellendus tempore, autem tempora atque
-              excepturi iusto distinctio vel repellat amet ea, at reprehenderit
-              unde hic commodi cumque facere eaque ab! Nostrum aperiam dolore
-              laboriosam eaque in. Quis, recusandae repellat!
-            </Card>
-            <Card
-              layout="detail"
-              title="Inception"
-              rating={3.5}
-              genres={['action']}
-              image="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg"
-              isBookmarked={false}
-              onBookmarkClick={() => console.log('Hi')}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-              officia illum, explicabo laboriosam maxime beatae reiciendis alias
-              doloremque! Quis minima, repellendus tempore, autem tempora atque
-              excepturi iusto distinctio vel repellat amet ea, at reprehenderit
-              unde hic commodi cumque facere eaque ab! Nostrum aperiam dolore
-              laboriosam eaque in. Quis, recusandae repellat!
-            </Card>
-            <Card
-              layout="detail"
-              title="Parasite"
-              rating={2.0}
-              genres={['action']}
-              image="https://le-cdn.website-editor.net/83fbab195c334c53aead9b299ad002bc/dms3rep/multi/opt/Unbenannt-960w.png"
-              isBookmarked={false}
-              onBookmarkClick={() => console.log('Hi')}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-              officia illum, explicabo laboriosam maxime beatae reiciendis alias
-              doloremque! Quis minima, repellendus tempore, autem tempora atque
-              excepturi iusto distinctio vel repellat amet ea, at reprehenderit
-              unde hic commodi cumque facere eaque ab! Nostrum aperiam dolore
-              laboriosam eaque in. Quis, recusandae repellat!
-            </Card>
+            {latestCards.map((card) => {
+              return (
+                <Card
+                  layout={card.layout}
+                  title={card.title}
+                  rating={card.rating}
+                  genres={card.genres}
+                  image={card.image}
+                  isBookmarked={card.isBookmarked}
+                  onBookmarkClick={card.onBookmarkClick}
+                >
+                  {card.children}
+                </Card>
+              );
+            })}
           </div>
         </section>
       </div>
