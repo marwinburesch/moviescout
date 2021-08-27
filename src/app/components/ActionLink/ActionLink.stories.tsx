@@ -27,5 +27,5 @@ export const RottenTomatoes = Template.bind({});
 RottenTomatoes.args = {
   children: 'See on Rotten Tomatoes',
   url: 'https://www.rottentomatoes.com/',
-  hasIcon: false,
+  hasIcon: true,
 };
