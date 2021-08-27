@@ -10,7 +10,7 @@ const StarIcon = (
   const { iconState, ...propsNoStarIconProps } = props;
   const iconStateMap = {
     active: (
-      <linearGradient id="grad1">
+      <linearGradient id="active">
         <stop offset="100%" stopColor="var(--color-primary)" />
         <stop offset="100%" stopColor="var(--color-primary)" />
         <stop offset="50%" stopColor="var(--text-secondary)" />
@@ -18,7 +18,7 @@ const StarIcon = (
       </linearGradient>
     ),
     inactive: (
-      <linearGradient id="grad1">
+      <linearGradient id="inactive">
         <stop offset="0%" stopColor="var(--color-primary)" />
         <stop offset="0%" stopColor="var(--color-primary)" />
         <stop offset="0%" stopColor="var(--text-secondary)" />
@@ -26,7 +26,7 @@ const StarIcon = (
       </linearGradient>
     ),
     halfActive: (
-      <linearGradient id="grad1">
+      <linearGradient id="halfActive">
         <stop offset="0%" stopColor="var(--color-primary)" />
         <stop offset="50%" stopColor="var(--color-primary)" />
         <stop offset="50%" stopColor="var(--text-secondary)" />
@@ -39,7 +39,7 @@ const StarIcon = (
     <svg height="24" viewBox="0 0 24 24" width="24" {...propsNoStarIconProps}>
       <defs>{iconStateMap[iconState]}</defs>
       <path
-        fill="url(#grad1)"
+        fill={`url(#${iconState})`}
         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
       />
     </svg>
