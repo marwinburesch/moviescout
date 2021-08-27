@@ -75,3 +75,33 @@ export const TestCard = (): JSX.Element => (
     doloribus!
   </Card>
 );
+
+export const OverflowTestCard = (): JSX.Element => {
+  return (
+    <Card
+      layout="detail"
+      title="Pulp FictionPulp FictionPulp FictionPulp FictionPulp FictionPulp Fiction"
+      rating={4.5}
+      genres={[
+        'Komödie',
+        'Action',
+        'Komödie',
+        'Action',
+        'Komödie',
+        'Action',
+        'Komödie',
+        'Action',
+        'Action',
+        'Komödie',
+        'Action',
+      ]}
+      image=""
+      onBookmarkClick={() => console.log('')}
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde perspiciatis
+      magnam, nobis laudantium incidunt harum eaque qui aperiam saepe quam
+      consequuntur voluptate doloremque quae molestias magni maxime ut facere
+      doloribus!
+    </Card>
+  );
+};
