@@ -38,7 +38,7 @@ export default function Card({
           ></MovieButton>
         </div>
       </div>
-      <div>
+      <section>
         <p className={styles.title}>{title}</p>
         <div>
           {rating}
@@ -55,7 +55,7 @@ export default function Card({
             <p className={styles.description}>{children}</p>
           </>
         )}
-      </div>
+      </section>
     </article>
   );
 }
