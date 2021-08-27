@@ -1,0 +1,26 @@
+.page {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh;
+}
+
+main {
+  overflow: auto;
+}
+
+.search {
+  width: 100vw;
+  padding-left: 1rem;
+}
+
+.searchbar {
+  padding: 0.3rem 1rem 1rem 0;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+}
