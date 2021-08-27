@@ -6,7 +6,7 @@ import SearchIcon from '../assets/SearchIcon';
 import styles from './Navigation.module.css';
 
 type NavigationProps = {
-  activeLink: 'home' | 'search' | 'bookmark';
+  activeLink?: 'home' | 'search' | 'bookmark';
 };
 
 function Navigation({ activeLink }: NavigationProps): JSX.Element {
