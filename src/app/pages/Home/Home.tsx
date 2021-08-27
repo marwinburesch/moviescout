@@ -6,8 +6,10 @@ import Navigation from '../../components/Navigation/Navigation';
 import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 
+type CardPropsWithoutFunction = Omit<CardProps, 'onBookmarkClick'>;
+
 function home(): JSX.Element {
-  const mockLatestCards: CardProps[] = [
+  const mockLatestCards: CardPropsWithoutFunction[] = [
     {
       layout: 'detail',
       title: 'Inside',
@@ -18,7 +20,6 @@ function home(): JSX.Element {
       image:
         'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
     {
       layout: 'detail',
@@ -30,7 +31,6 @@ function home(): JSX.Element {
       image:
         'https://lh3.googleusercontent.com/proxy/PYYVWG85Gnr1TNrjy2gZPorvShitwCTYwV-Q60tMoqRYCIQN-oisJLJ6htkJiZAfTe37eIV8Yh8oe6vhhe5ck0JUBLD7FcswqJYSwbW-Q9o5C4b9',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
     {
       layout: 'detail',
@@ -41,7 +41,6 @@ function home(): JSX.Element {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
       image: 'https://de.web.img2.acsta.net/pictures/14/02/13/11/38/183661.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
     {
       layout: 'detail',
@@ -52,11 +51,10 @@ function home(): JSX.Element {
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
       image: 'https://images-na.ssl-images-amazon.com/images/I/91kFYg4fX3L.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
   ];
 
-  const mockTopCards: CardProps[] = [
+  const mockTopCards: CardPropsWithoutFunction[] = [
     {
       layout: 'wide',
       title: 'Inside',
@@ -67,11 +65,10 @@ function home(): JSX.Element {
       image:
         'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
     {
       layout: 'wide',
-      title: 'Inside',
+      title: 'Ted',
       rating: 0.5,
       genres: ['Action'],
       children:
@@ -79,11 +76,10 @@ function home(): JSX.Element {
       image:
         'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
     {
       layout: 'wide',
-      title: 'Inside',
+      title: 'Film',
       rating: 1.5,
       genres: ['Action'],
       children:
@@ -91,11 +87,10 @@ function home(): JSX.Element {
       image:
         'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
     {
       layout: 'wide',
-      title: 'Inside',
+      title: 'Serie',
       rating: 2.5,
       genres: ['Action'],
       children:
@@ -103,11 +98,10 @@ function home(): JSX.Element {
       image:
         'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
     {
       layout: 'wide',
-      title: 'Inside',
+      title: 'Test',
       rating: 3.5,
       genres: ['Action'],
       children:
@@ -115,16 +109,33 @@ function home(): JSX.Element {
       image:
         'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
       isBookmarked: false,
-      onBookmarkClick: () => handleBookmarkClick(),
     },
   ];
 
-  const [latestCards, setLatestCards] = useState<CardProps[]>(mockLatestCards);
+  const [latestCards, setLatestCards] =
+    useState<CardPropsWithoutFunction[]>(mockLatestCards);
 
-  const [topCards, setTopCards] = useState<CardProps[]>(mockTopCards);
+  const [topFiveCards, setTopFiveCards] =
+    useState<CardPropsWithoutFunction[]>(mockTopCards);
 
-  function handleBookmarkClick() {
-    console.log('object');
+  function handleTopFiveClick(title: string) {
+    const newTopFiveCards = topFiveCards.map((card) => {
+      if (card.title === title) {
+        card.isBookmarked = !card.isBookmarked;
+      }
+      return card;
+    });
+    setTopFiveCards(newTopFiveCards);
+  }
+
+  function handleLatestClick(title: string) {
+    const newLatestCards = latestCards.map((card) => {
+      if (card.title === title) {
+        card.isBookmarked = !card.isBookmarked;
+      }
+      return card;
+    });
+    setLatestCards(newLatestCards);
   }
 
   return (
@@ -135,16 +146,17 @@ function home(): JSX.Element {
         </div>
 
         <section className={styles.topFiveCards}>
-          {topCards.map((card) => {
+          {topFiveCards.map((card) => {
             return (
               <Card
+                key={card.title}
                 layout={card.layout}
                 title={card.title}
                 rating={card.rating}
                 genres={card.genres}
                 image={card.image}
                 isBookmarked={card.isBookmarked}
-                onBookmarkClick={card.onBookmarkClick}
+                onBookmarkClick={handleTopFiveClick}
               >
                 {card.children}
               </Card>
@@ -163,13 +175,14 @@ function home(): JSX.Element {
             {latestCards.map((card) => {
               return (
                 <Card
+                  key={card.title}
                   layout={card.layout}
                   title={card.title}
                   rating={card.rating}
                   genres={card.genres}
                   image={card.image}
                   isBookmarked={card.isBookmarked}
-                  onBookmarkClick={card.onBookmarkClick}
+                  onBookmarkClick={handleLatestClick}
                 >
                   {card.children}
                 </Card>
