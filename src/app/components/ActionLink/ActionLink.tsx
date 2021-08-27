@@ -22,14 +22,12 @@ const ActionLink = ({
       target="_blank"
     >
       <span className={styles.title}>{children}</span>
-      {hasIcon ? (
+      {hasIcon && (
         <ChevronRightIcon
           className={styles.chevronRightIcon}
           width="1.5rem"
           height="1.5rem"
         />
-      ) : (
-        ''
       )}
     </a>
   );
