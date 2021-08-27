@@ -3,11 +3,19 @@ main {
   background-color: var(--bg-primary);
   height: 100vh;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .cardWrapper {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   padding: 1rem;
   gap: 1rem;
+}
+
+.navigation {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
 }
