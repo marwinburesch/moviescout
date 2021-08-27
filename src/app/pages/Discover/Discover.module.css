@@ -1,9 +1,29 @@
-main {
-  margin: 0;
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
   background-color: var(--bg-primary);
   height: 100vh;
   overflow: auto;
   scroll-behavior: smooth;
+}
+
+.topSection {
+  background-color: var(--bg-primary);
+  grid-row-start: 1;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+.header {
+  padding: 2.5rem 0 0.8rem 1rem;
+}
+
+.tagGroup {
+  padding-bottom: 1.6rem;
+  padding-left: 1rem;
 }
 
 .cardWrapper {
@@ -14,7 +34,7 @@ main {
 }
 
 .navigation {
-  position: absolute;
+  position: sticky;
   z-index: 100;
   bottom: 0;
   width: 100%;
