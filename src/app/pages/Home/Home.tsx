@@ -17,7 +17,8 @@ function home(): JSX.Element {
       genres: ['Action'],
       children:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
-      image: 'https://media1.jpc.de/image/w600/front/0/5051890008961.jpg',
+      image:
+        'https://gfx.videobuster.de/archive/v/c3CGWmml_8WJgNmxlETXfzAcz0lMkawqyUyRqclMkZpbWGZJTJGanBlZyUyRmNiYjBlYWIzZtRjlWM5ZDRh0WZi7WO-72EzLmpwZyZyPXfvOA/ted-2.jpg',
       isBookmarked: false,
     },
     {
@@ -28,7 +29,7 @@ function home(): JSX.Element {
       children:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
       image:
-        'https://lh3.googleusercontent.com/proxy/PYYVWG85Gnr1TNrjy2gZPorvShitwCTYwV-Q60tMoqRYCIQN-oisJLJ6htkJiZAfTe37eIV8Yh8oe6vhhe5ck0JUBLD7FcswqJYSwbW-Q9o5C4b9',
+        'https://de.web.img3.acsta.net/medias/nmedia/18/71/10/38/19283541.jpg',
       isBookmarked: false,
     },
     {
