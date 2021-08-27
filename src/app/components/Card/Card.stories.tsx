@@ -7,13 +7,47 @@ export default {
   component: Card,
 };
 
-export const DetailCard = (): JSX.Element => (
+export const DetailCard = (): JSX.Element => {
+  return (
+    <Card
+      layout="detail"
+      title="Pulp Fiction"
+      rating={4.5}
+      genres={['Komödie', 'Action']}
+      image=""
+      onBookmarkClick={() => console.log('')}
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde perspiciatis
+      magnam, nobis laudantium incidunt harum eaque qui aperiam saepe quam
+      consequuntur voluptate doloremque quae molestias magni maxime ut facere
+      doloribus!
+    </Card>
+  );
+};
+
+export const WideCard = (): JSX.Element => (
   <Card
-    layout="detail"
+    layout="wide"
     title="Pulp Fiction"
     rating={4.5}
     genres={['Komödie', 'Action']}
-    image="https://assets.cdn.moviepilot.de/files/07a61f8455bcdfa81b565fbae400e37f0ac2408717c5887cd63bba28fe8e/limit/500/1000/pulp-fiction-cover.jpg"
+    image=""
+    onBookmarkClick={() => console.log('')}
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde perspiciatis
+    magnam, nobis laudantium incidunt harum eaque qui aperiam saepe quam
+    consequuntur voluptate doloremque quae molestias magni maxime ut facere
+    doloribus!
+  </Card>
+);
+export const CompactCard = (): JSX.Element => (
+  <Card
+    layout="compact"
+    title="Pulp Fiction"
+    rating={4.5}
+    genres={['Komödie', 'Action']}
+    image=""
+    onBookmarkClick={() => console.log('')}
   >
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde perspiciatis
     magnam, nobis laudantium incidunt harum eaque qui aperiam saepe quam
@@ -22,32 +56,18 @@ export const DetailCard = (): JSX.Element => (
   </Card>
 );
 
-// export default {
-//   title: 'Component/Card',
-//   component: Card,
-//   argTypes: {
-//     layout: {
-//       options: ['detail', 'compact', 'wide'],
-//       control: { type: 'select' },
-//     },
-//   },
-// };
-
-// const Template: Story<CardProps> = (args) => <Card {...args} />;
-
-// export const Card = Template.bind({});
-// Card.args = {
-//   layout: 'detail',
-// };
-
-// // export const Bookmark = Template.bind({});
-// // Bookmark.args = {
-// //   layout: 'compact',
-// //   isActive: true,
-// // };
-
-// // export const SearchIcon = Template.bind({});
-// // SearchIcon.args = {
-// //   layout: 'wide',
-// //   isActive: true,
-// // };
+export const TestCard = (): JSX.Element => (
+  <Card
+    layout="compact"
+    title="Pulp Fiction"
+    rating={4.5}
+    genres={['Komödie', 'Action']}
+    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHILF70VeqhsH_fzgLs2X_5X_zP1Q6_tuEqLeo8p_vIsfeigYK4xqyvWI5pzYZZ2Hf2Bk&usqp=CAU"
+    onBookmarkClick={() => console.log('')}
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde perspiciatis
+    magnam, nobis laudantium incidunt harum eaque qui aperiam saepe quam
+    consequuntur voluptate doloremque quae molestias magni maxime ut facere
+    doloribus!
+  </Card>
+);
