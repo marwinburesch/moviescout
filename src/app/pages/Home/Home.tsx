@@ -12,13 +12,12 @@ function home(): JSX.Element {
   const mockLatestCards: CardPropsWithoutFunction[] = [
     {
       layout: 'detail',
-      title: 'Inside',
+      title: 'Hangover',
       rating: 2.5,
       genres: ['Action'],
       children:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
-      image:
-        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      image: 'https://media1.jpc.de/image/w600/front/0/5051890008961.jpg',
       isBookmarked: false,
     },
     {
@@ -57,13 +56,13 @@ function home(): JSX.Element {
   const mockTopCards: CardPropsWithoutFunction[] = [
     {
       layout: 'wide',
-      title: 'Inside',
+      title: 'Big meets bigger',
       rating: 4.5,
       genres: ['Comedy'],
       children:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
       image:
-        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+        'https://i.pinimg.com/474x/ce/34/09/ce3409b5eae0a48c691c48edf6a866cc.jpg',
       isBookmarked: false,
     },
     {
@@ -74,7 +73,7 @@ function home(): JSX.Element {
       children:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
       image:
-        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+        'https://lh3.googleusercontent.com/proxy/PYYVWG85Gnr1TNrjy2gZPorvShitwCTYwV-Q60tMoqRYCIQN-oisJLJ6htkJiZAfTe37eIV8Yh8oe6vhhe5ck0JUBLD7FcswqJYSwbW-Q9o5C4b9',
       isBookmarked: false,
     },
     {
@@ -84,8 +83,7 @@ function home(): JSX.Element {
       genres: ['Action'],
       children:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
-      image:
-        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      image: 'https://de.web.img2.acsta.net/pictures/14/02/13/11/38/183661.jpg',
       isBookmarked: false,
     },
     {
@@ -95,8 +93,7 @@ function home(): JSX.Element {
       genres: ['Action'],
       children:
         'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae exercitationem modi aspernatur laudantium corrupti voluptate, doloribus dolorum ut est? Deserunt, inventore natus repellat enim ab soluta necessitatibus recusandae earum molestias exercitationem nemo blanditiis accusantium ipsum odit praesentium alias veniam? Veritatis nostrum corrupti praesentium velit libero molestias dicta labore nemo quibusdam.',
-      image:
-        'https://m.media-amazon.com/images/M/MV5BMDE3MjcxNjEtODUzNi00NzdmLWFlMGMtMzhmMTg3NDdmM2IyXkEyXkFqcGdeQXVyNjYyMjE4NDY@._V1_FMjpg_UX1000_.jpg',
+      image: 'https://images-na.ssl-images-amazon.com/images/I/91kFYg4fX3L.jpg',
       isBookmarked: false,
     },
     {
@@ -123,6 +120,7 @@ function home(): JSX.Element {
       if (card.title === title) {
         card.isBookmarked = !card.isBookmarked;
       }
+
       return card;
     });
     setTopFiveCards(newTopFiveCards);
