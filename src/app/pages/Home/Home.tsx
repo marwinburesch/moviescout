@@ -146,20 +146,7 @@ function home(): JSX.Element {
 
         <section className={styles.topFiveCards}>
           {topFiveCards.map((card) => {
-            return (
-              <Card
-                key={card.title}
-                layout={card.layout}
-                title={card.title}
-                rating={card.rating}
-                genres={card.genres}
-                image={card.image}
-                isBookmarked={card.isBookmarked}
-                onBookmarkClick={handleTopFiveClick}
-              >
-                {card.children}
-              </Card>
-            );
+            return <Card {...card} onBookmarkClick={handleTopFiveClick} />;
           })}
         </section>
 
@@ -172,20 +159,7 @@ function home(): JSX.Element {
           </div>
           <div className={styles.latestContainer}>
             {latestCards.map((card) => {
-              return (
-                <Card
-                  key={card.title}
-                  layout={card.layout}
-                  title={card.title}
-                  rating={card.rating}
-                  genres={card.genres}
-                  image={card.image}
-                  isBookmarked={card.isBookmarked}
-                  onBookmarkClick={handleLatestClick}
-                >
-                  {card.children}
-                </Card>
-              );
+              return <Card {...card} onBookmarkClick={handleLatestClick} />;
             })}
           </div>
         </section>
