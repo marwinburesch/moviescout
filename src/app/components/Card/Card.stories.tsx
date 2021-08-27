@@ -1,5 +1,4 @@
 import React from 'react';
-import type { CardProps } from './Card';
 import Card from './Card';
 
 export default {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MovieButton from '../MovieButton/MovieButton';
 import RatingIcon from '../RatingIcon/RatingIcon';
 import styles from './Card.module.css';
