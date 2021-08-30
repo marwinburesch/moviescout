@@ -140,9 +140,7 @@ export default function Home(): JSX.Element {
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
-        <div className={styles.header}>
-          <Header>Top Five</Header>
-        </div>
+        <Header className={styles.header}>Top Five</Header>
 
         <section className={styles.topFiveCards}>
           {topFiveCards.map((card) => {
