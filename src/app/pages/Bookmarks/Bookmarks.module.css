@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  background-color: var(--bg-primary);
+  display: grid;
+  height: 100vh;
+  overflow: auto;
+}
+.header {
+  padding-top: 2.5rem;
+  padding-left: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-primary);
+}
+.cardWrapper {
+  display: grid;
+  padding: 1em;
+  gap: 1em;
+  overflow: scroll;
+}
