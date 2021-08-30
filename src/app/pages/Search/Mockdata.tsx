@@ -4,7 +4,7 @@ export const mockTagGroupProps = [
   { children: 'Comedy', count: '1' },
 ];
 
-export const mockCard = {
+const mockCard = {
   genres: ['Comedy', 'Action', 'Love Film'],
   title: 'Pulp Fiction 7',
   rating: 4.5,
@@ -13,3 +13,5 @@ export const mockCard = {
   children:
     'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, expedita repudiandae numquam quidem obcaecati aliquid id sapiente architecto et incidunt pariatur delectus facere dolor earum iusto suscipit ratione. Officia ducimus aspernatur incidunt ea eligendi nobis dolorum ab quasi, nostrum harum officiis suscipit voluptates necessitatibus nemo debitis architecto, facere in natus laborum! A aspernatur maiores magnam. Nihil expedita in dolorum quibusdam quam assumenda, voluptatem vitae accusamus beatae laudantium incidunt qui laboriosam porro rem ad totam, quasi molestias error quod earum ipsa recusandae itaque velit consectetur. Ab reiciendis labore dignissimos incidunt officiis similique, veniam ipsam cumque aperiam a amet harum minus accusamus!',
 };
+
+export const mockCards = [mockCard, mockCard, mockCard, mockCard, mockCard];

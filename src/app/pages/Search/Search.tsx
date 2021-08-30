@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import Navigation from '../../components/Navigation/Navigation';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import TagGroup from '../../components/TagGroup/TagGroup';
-import { mockCard, mockTagGroupProps } from './Mockdata';
+import { mockCards, mockTagGroupProps } from './Mockdata';
 import styles from './Search.module.css';
 
 export default function Search(): JSX.Element {
@@ -22,43 +22,24 @@ export default function Search(): JSX.Element {
         searchResult={searchValue}
         setSearchResult={setSearchValue}
         handleSubmit={handleSubmit}
-        className={styles.searchbar}
       />
       <section className={styles.search}>
         <TagGroup tagList={mockTagGroupProps} />
         <p>Search Results(3)</p>
       </section>
       <main className={styles.cards}>
-        <Card
-          title={mockCard.title}
-          rating={mockCard.rating}
-          image={mockCard.image}
-          layout="detail"
-          genres={mockCard.genres}
-          onBookmarkClick={() => console.log('hallo')}
-        >
-          {mockCard.children}
-        </Card>
-        <Card
-          title={mockCard.title}
-          rating={mockCard.rating}
-          image={mockCard.image}
-          layout="detail"
-          genres={mockCard.genres}
-          onBookmarkClick={() => console.log('hallo')}
-        >
-          {mockCard.children}
-        </Card>
-        <Card
-          title={mockCard.title}
-          rating={mockCard.rating}
-          image={mockCard.image}
-          layout="detail"
-          genres={mockCard.genres}
-          onBookmarkClick={() => console.log('hallo')}
-        >
-          {mockCard.children}
-        </Card>
+        {mockCards?.map((mockCard) => (
+          <Card
+            title={mockCard.title}
+            rating={mockCard.rating}
+            image={mockCard.image}
+            layout="detail"
+            genres={mockCard.genres}
+            onBookmarkClick={() => console.log('hallo')}
+          >
+            {mockCard.children}
+          </Card>
+        ))}
       </main>
       <Navigation activeLink="search" />
     </div>
