@@ -12,6 +12,7 @@ export type CardProps = {
   isBookmarked?: boolean;
   onBookmarkClick: () => void;
   children: React.ReactNode;
+  className?: string;
 };
 
 export default function Card({
@@ -23,9 +24,14 @@ export default function Card({
   isBookmarked = false,
   onBookmarkClick,
   children,
+  className,
 }: CardProps): JSX.Element {
   return (
-    <article className={`${styles.article} ${styles[`article--${layout}`]}`}>
+    <article
+      className={`${styles.article} ${
+        styles[`article--${layout}`]
+      } ${className}`}
+    >
       <div
         className={styles.image}
         style={{ backgroundImage: `url(${image})` }}
