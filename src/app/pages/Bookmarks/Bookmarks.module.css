@@ -22,11 +22,5 @@
   display: grid;
   padding: 1em;
   gap: 1em;
-}
-
-.navigation {
-  position: sticky;
-  z-index: 100;
-  bottom: 0;
-  width: 100%;
+  overflow: scroll;
 }
