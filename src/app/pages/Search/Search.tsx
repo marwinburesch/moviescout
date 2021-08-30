@@ -20,8 +20,8 @@ export default function Search(): JSX.Element {
       </Header>
       <SearchBar
         className={styles.searchbar}
-        searchResult={searchValue}
-        setSearchResult={setSearchValue}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
         handleSubmit={handleSubmit}
       />
 
