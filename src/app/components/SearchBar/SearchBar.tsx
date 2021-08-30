@@ -12,12 +12,12 @@ type SearchBarProps = {
 function SearchBar({
   searchValue,
   handleSubmit,
-  className = '',
   setSearchValue,
+  className,
 }: SearchBarProps): JSX.Element {
   return (
     <form
-      className={`${className} ${styles.container}`}
+      className={`${styles.container} ${className}`}
       onSubmit={handleSubmit}
     >
       <SearchIcon fill="white" width="12" height="12" />

@@ -1,4 +1,5 @@
 import React from 'react';
+import Home from './pages/Home/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Search from './pages/Search/Search';
 
@@ -13,7 +14,7 @@ function App(): JSX.Element {
           <Search />
         </Route>
         <Route path="/">
-          <main>Home</main>
+          <Home />
         </Route>
       </Switch>
     </BrowserRouter>
