@@ -69,3 +69,23 @@ export async function getMovie(id: string): Promise<Movie> {
     genres: movie.genres?.map((genre) => genre.name),
   };
 }
+
+export async function searchMovie(query: string): Promise<Movie[]> {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+  );
+  const movies: MoviesFromAPI = await response.json();
+  const formattedMovies = movies.results.map((movie: MovieFromAPI) => {
+    return {
+      title: movie.title,
+      rating: movie.vote_average,
+      overview: movie.overview,
+      image: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+      id: movie.id,
+      genres: movie.genre_ids.map((id: GenreIDs) =>
+        GENRES[id] ? GENRES[id] : ''
+      ),
+    };
+  });
+  return formattedMovies;
+}
