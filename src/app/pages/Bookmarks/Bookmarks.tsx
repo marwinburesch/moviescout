@@ -4,10 +4,6 @@ import Header from '../../components/Header/Header';
 import Card, { CardProps } from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
 
-// type MovieInfo = {
-//   movieInfo: string;
-// };
-
 export default function Bookmarks(): JSX.Element {
   const mockupData: CardProps[] = [
     {
