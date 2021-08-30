@@ -1,7 +1,6 @@
 import React from 'react';
 import MovieButton from '../MovieButton/MovieButton';
 import Rating from '../Rating/Rating';
-import RatingIcon from '../RatingIcon/RatingIcon';
 import styles from './Card.module.css';
 
 export type CardProps = {
