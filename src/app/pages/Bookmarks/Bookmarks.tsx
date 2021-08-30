@@ -45,13 +45,14 @@ export default function Bookmarks(): JSX.Element {
         </Header>
       </section>
       <main className={styles.cardWrapper}>
-        {movieInfo.map((movie) => (
-          <Card
-            key={movie.title}
-            onBookmarkClick={() => handleBookmarkClick(movie.title)}
-            {...movie}
-          />
-        ))}
+        {mockupData.length !== 0 &&
+          movieInfo.map((movie) => (
+            <Card
+              key={movie.title}
+              onBookmarkClick={() => handleBookmarkClick(movie.title)}
+              {...movie}
+            />
+          ))}
       </main>
       <section>
         <Navigation activeLink="bookmark"></Navigation>
