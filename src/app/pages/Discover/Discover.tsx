@@ -7,7 +7,7 @@ import TagGroup from '../../components/TagGroup/TagGroup';
 
 const mockFunction = () => console.log('📽');
 
-const tags = [
+const mockTags = [
   {
     count: '',
     active: false,
@@ -119,24 +119,20 @@ const mockMovies: CardProps[] = [
 
 export default function Discover(): JSX.Element {
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <section className={styles.topSection}>
-        <div className={styles.header}>
-          <Header withBackButton isHighlighted>
-            Discover
-          </Header>
-        </div>
+        <Header withBackButton isHighlighted>
+          Discover
+        </Header>
         <div className={styles.tagGroup}>
-          <TagGroup tagList={tags} />
+          <TagGroup tagList={mockTags} />
         </div>
       </section>
-      <div className={styles.cardWrapper}>
+      <section className={styles.cardWrapper}>
         {mockMovies.length !== 0 &&
-          mockMovies.map((movie) => <Card {...movie} />)}
-      </div>
-      <div className={styles.navigation}>
-        <Navigation activeLink="home" />
-      </div>
-    </main>
+          mockMovies.map((movie) => <Card key={movie.title} {...movie} />)}
+      </section>
+      <Navigation activeLink="home" />
+    </div>
   );
 }
