@@ -24,7 +24,10 @@ router.get('/latest', async (_req, res) => {
 
 router.get('/search', async (req, res) => {
   const query = req.query.q;
-  if (typeof query !== 'string') {
+  if (!query) {
+    res.status(400).json({ message: 'Query is required' });
+    return;
+  } else if (typeof query !== 'string') {
     res.status(400).json({ message: 'Query must be a string' });
     return;
   }
