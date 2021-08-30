@@ -1,6 +1,5 @@
 .page {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   height: 100vh;
@@ -11,7 +10,6 @@ main {
 }
 
 .search {
-  width: 100vw;
   padding-left: 1rem;
 }
 

@@ -24,10 +24,10 @@ export default function Search(): JSX.Element {
         setSearchResult={setSearchValue}
         handleSubmit={handleSubmit}
       />
-      <section className={styles.search}>
-        <TagGroup tagList={mockTagGroupProps} />
-        <p>Search Results(3)</p>
-      </section>
+
+      <TagGroup tagList={mockTagGroupProps} />
+      <p>Search Results(3)</p>
+
       <main className={styles.cards}>
         {mockCards?.map((mockCard) => (
           <Card
