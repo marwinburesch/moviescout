@@ -3,16 +3,16 @@ import styles from './SearchBar.module.css';
 import SearchIcon from '../assets/SearchIcon';
 
 type SearchBarProps = {
-  searchResult: string;
+  searchValue: string;
   handleSubmit: () => void;
-  setSearchResult: (searchResult: string) => void;
+  setSearchValue: (searchValue: string) => void;
   className?: string;
 };
 
 function SearchBar({
-  searchResult,
+  searchValue,
   handleSubmit,
-  setSearchResult,
+  setSearchValue,
   className,
 }: SearchBarProps): JSX.Element {
   return (
@@ -26,8 +26,8 @@ function SearchBar({
         type="search"
         placeholder="Search"
         className={styles.searchBar__input}
-        value={searchResult}
-        onChange={(event) => setSearchResult(event.target.value)}
+        value={searchValue}
+        onChange={(event) => setSearchValue(event.target.value)}
       />
     </form>
   );
