@@ -3,27 +3,17 @@
 }
 
 .container {
-  background-color: var(--bg-primary);
   height: 100vh;
-  overflow: auto;
-  scroll-behavior: smooth;
+  display: grid;
+  background-color: var(--bg-primary);
+  grid-template-rows: 20% 70% 10%;
+  grid-auto-flow: row;
 }
 
 .topSection {
-  background-color: var(--bg-primary);
-  grid-row-start: 1;
-  position: sticky;
-  z-index: 100;
-  top: 0;
-}
-
-.header {
-  padding: 2.5rem 0 0.8rem 1rem;
-}
-
-.tagGroup {
-  padding-bottom: 1.6rem;
-  padding-left: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 2.5rem 0 0 1rem;
 }
 
 .cardWrapper {
@@ -31,11 +21,9 @@
   grid-template-columns: 1fr 1fr;
   padding: 1rem;
   gap: 1rem;
+  overflow: scroll;
 }
 
-.navigation {
-  position: sticky;
-  z-index: 100;
-  bottom: 0;
-  width: 100%;
+.tagGroup {
+  overflow: hidden;
 }
