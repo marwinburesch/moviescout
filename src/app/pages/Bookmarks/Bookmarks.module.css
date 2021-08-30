@@ -30,4 +30,7 @@
   .cardWrapper {
     grid-template-columns: 1fr 1fr;
   }
+  .container {
+    grid-template-rows: 8% 84% 8%;
+  }
 }
