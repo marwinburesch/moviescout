@@ -54,9 +54,8 @@ export default function Bookmarks(): JSX.Element {
             />
           ))}
       </main>
-      <section>
-        <Navigation activeLink="bookmark"></Navigation>
-      </section>
+
+      <Navigation activeLink="bookmark"></Navigation>
     </div>
   );
 }
