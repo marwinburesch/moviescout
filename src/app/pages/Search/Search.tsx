@@ -15,7 +15,7 @@ export default function Search(): JSX.Element {
   }
   return (
     <div className={styles.page}>
-      <Header withBackButton isHighlighted>
+      <Header className={styles.header} withBackButton isHighlighted>
         Search
       </Header>
       <SearchBar
