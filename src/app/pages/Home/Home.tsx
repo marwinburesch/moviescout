@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 type CardPropsWithoutFunction = Omit<CardProps, 'onBookmarkClick'>;
 
-function home(): JSX.Element {
+function Home(): JSX.Element {
   const mockLatestCards: CardPropsWithoutFunction[] = [
     {
       layout: 'detail',
@@ -181,4 +181,4 @@ function home(): JSX.Element {
   );
 }
 
-export default home;
+export default Home;
