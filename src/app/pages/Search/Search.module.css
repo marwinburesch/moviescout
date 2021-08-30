@@ -11,11 +11,15 @@ main {
 }
 
 .search {
-  padding-left: 1rem;
+  padding: 1rem;
 }
 
 .searchbar {
   margin: 1rem;
+}
+
+.searchResult {
+  padding-left: 1rem;
 }
 .cards {
   display: flex;

@@ -26,7 +26,7 @@ export default function Search(): JSX.Element {
       />
 
       <TagGroup tagList={mockTagGroupProps} />
-      <p>Search Results(3)</p>
+      <p className={styles.searchResult}>Search Results(3)</p>
 
       <main className={styles.cards}>
         {mockCards?.map((mockCard) => (
