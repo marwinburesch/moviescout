@@ -27,3 +27,7 @@ main {
   gap: 1rem;
   padding: 0 1rem;
 }
+
+.tagGroup {
+  padding-left: 1rem;
+}

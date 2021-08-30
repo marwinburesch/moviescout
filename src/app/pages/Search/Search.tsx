@@ -25,12 +25,13 @@ export default function Search(): JSX.Element {
         handleSubmit={handleSubmit}
       />
 
-      <TagGroup tagList={mockTagGroupProps} />
+      <TagGroup className={styles.tagGroup} tagList={mockTagGroupProps} />
       <p className={styles.searchResult}>Search Results(3)</p>
 
       <main className={styles.cards}>
         {mockCards?.map((mockCard) => (
           <Card
+            key={mockCard.title}
             title={mockCard.title}
             rating={mockCard.rating}
             image={mockCard.image}
