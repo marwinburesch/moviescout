@@ -1,44 +1,41 @@
 import React, { useState } from 'react';
 import styles from './Bookmarks.module.css';
 import Header from '../../components/Header/Header';
-import Card, { CardProps } from '../../components/Card/Card';
+import Card from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
-import { title } from 'process';
 
 export default function Bookmarks(): JSX.Element {
-  const mockupData: CardProps[] = [
+  const mockupData = [
     {
-      layout: 'detail',
       title: 'Top Gun',
       rating: 5,
       genres: [''],
       image: 'string | null',
       isBookmarked: true,
-      onBookmarkClick: () => console.log(`${movie.title}`),
       children: '???',
     },
     {
-      layout: 'detail',
       title: 'Southpark',
       rating: 5,
       genres: [''],
       image: 'string | null',
       isBookmarked: true,
-      onBookmarkClick: () => console.log(''),
       children: '???',
     },
     {
-      layout: 'detail',
       title: 'Lethal Weapon',
       rating: 5,
       genres: [''],
       image: 'string | null',
       isBookmarked: true,
-      onBookmarkClick: () => console.log(''),
       children: '???',
     },
   ];
   const [movieInfo] = useState(mockupData);
+
+  function handleBookmarkClick(movie: string) {
+    console.log(movie);
+  }
 
   return (
     <div className={styles.container}>
@@ -49,10 +46,14 @@ export default function Bookmarks(): JSX.Element {
       </section>
       <main className={styles.cardWrapper}>
         {movieInfo.map((movie) => (
-          <Card key={movie.title} {...movie} />
+          <Card
+            key={movie.title}
+            onBookmarkClick={() => handleBookmarkClick(movie.title)}
+            {...movie}
+          />
         ))}
       </main>
-      <section className={styles.navigation}>
+      <section>
         <Navigation activeLink="bookmark"></Navigation>
       </section>
     </div>
