@@ -4,10 +4,14 @@ import styles from './BackButton.module.css';
 
 type BackButtonProps = {
   isHighlighted?: boolean;
+  className?: string;
 };
-function BackButton({ isHighlighted }: BackButtonProps): JSX.Element {
+function BackButton({
+  isHighlighted,
+  className,
+}: BackButtonProps): JSX.Element {
   return (
-    <button className={styles.backBtn}>
+    <button className={`${styles.backBtn} ${className}`}>
       <BackButtonIcon
         fill={isHighlighted ? 'var(--color-primary)' : 'var(--text-primary)'}
       />
