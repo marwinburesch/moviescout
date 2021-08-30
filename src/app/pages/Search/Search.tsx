@@ -19,6 +19,7 @@ export default function Search(): JSX.Element {
         Search
       </Header>
       <SearchBar
+        className={styles.searchbar}
         searchResult={searchValue}
         setSearchResult={setSearchValue}
         handleSubmit={handleSubmit}

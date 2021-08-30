@@ -6,15 +6,20 @@ type SearchBarProps = {
   searchResult: string;
   handleSubmit: (event: React.FormEvent) => void;
   setSearchResult: (searchResult: string) => void;
+  className?: string;
 };
 
 function SearchBar({
   searchResult,
   handleSubmit,
   setSearchResult,
+  className = '',
 }: SearchBarProps): JSX.Element {
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+    <form
+      className={`${className} ${styles.container}`}
+      onSubmit={handleSubmit}
+    >
       <SearchIcon fill="white" width="12" height="12" />
 
       <input
