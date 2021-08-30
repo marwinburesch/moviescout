@@ -41,7 +41,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
   ];
-  const [movieInfo, setMovieInfo] = useState(mockupData);
+  const [movieInfo] = useState(mockupData);
 
   return (
     <div className={styles.container}>
