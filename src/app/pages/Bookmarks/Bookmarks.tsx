@@ -86,6 +86,30 @@ export default function Bookmarks(): JSX.Element {
       isBookmarked: true,
       children: '???',
     },
+    {
+      title: 'Der Pate 2',
+      rating: 5,
+      genres: [''],
+      image: 'string | null',
+      isBookmarked: true,
+      children: '???',
+    },
+    {
+      title: 'Star Wars',
+      rating: 5,
+      genres: [''],
+      image: 'string | null',
+      isBookmarked: true,
+      children: '???',
+    },
+    {
+      title: 'Casino',
+      rating: 5,
+      genres: [''],
+      image: 'string | null',
+      isBookmarked: true,
+      children: '???',
+    },
   ];
   const [movieInfo] = useState(mockupData);
 
