@@ -6,7 +6,7 @@
   height: 100vh;
   display: grid;
   background-color: var(--bg-primary);
-  grid-template-rows: 20% 70% 10%;
+  grid-template-rows: auto 1fr auto;
   grid-auto-flow: row;
 }
 
@@ -19,7 +19,7 @@
 
 .cardWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   padding: 1rem;
   gap: 1rem;
   overflow: scroll;
@@ -27,4 +27,5 @@
 
 .tagGroup {
   overflow: hidden;
+  padding-bottom: 1rem;
 }
