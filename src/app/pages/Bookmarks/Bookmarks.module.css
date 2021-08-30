@@ -20,17 +20,8 @@
 
 .cardWrapper {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   padding: 1em;
   gap: 1em;
   overflow: scroll;
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .cardWrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-  .container {
-    grid-template-rows: 8% 84% 8%;
-  }
 }
