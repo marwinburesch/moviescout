@@ -3,6 +3,7 @@ import styles from './Bookmarks.module.css';
 import Header from '../../components/Header/Header';
 import Card, { CardProps } from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
+import { title } from 'process';
 
 export default function Bookmarks(): JSX.Element {
   const mockupData: CardProps[] = [
@@ -13,7 +14,7 @@ export default function Bookmarks(): JSX.Element {
       genres: [''],
       image: 'string | null',
       isBookmarked: true,
-      onBookmarkClick: () => console.log(''),
+      onBookmarkClick: () => console.log(`${movie.title}`),
       children: '???',
     },
     {
@@ -48,7 +49,7 @@ export default function Bookmarks(): JSX.Element {
       </section>
       <main className={styles.cardWrapper}>
         {movieInfo.map((movie) => (
-          <Card key={movie.title} {...movie}></Card>
+          <Card key={movie.title} {...movie} />
         ))}
       </main>
       <section className={styles.navigation}>
