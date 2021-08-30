@@ -6,16 +6,18 @@ export type ActionLinkProps = {
   children: React.ReactNode;
   url: string;
   hasIcon: boolean;
+  className?: string;
 };
 
 const ActionLink = ({
   children,
   url,
   hasIcon,
+  className,
 }: ActionLinkProps): JSX.Element => {
   return (
     <a
-      className={`${styles.actionLink} ${
+      className={`${styles.actionLink} ${className} ${
         hasIcon ? styles.actionLinkWithIcon : ''
       }`}
       href={url}

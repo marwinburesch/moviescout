@@ -6,10 +6,11 @@ import SearchIcon from '../assets/SearchIcon';
 import styles from './Navigation.module.css';
 
 type NavigationProps = {
-  activeLink?: 'home' | 'search' | 'bookmark';
+  activeLink: 'home' | 'search' | 'bookmark';
+  className?: string;
 };
 
-function Navigation({ activeLink }: NavigationProps): JSX.Element {
+function Navigation({ activeLink, className }: NavigationProps): JSX.Element {
   const active = {
     fill: 'var(--color-primary)',
     stroke: 'var(--color-primary)',
@@ -20,7 +21,7 @@ function Navigation({ activeLink }: NavigationProps): JSX.Element {
   };
 
   return (
-    <nav className={styles.navigation}>
+    <nav className={`${styles.navigation} ${className}`}>
       <Link to="/">
         <HomeIcon
           className={styles.home}

@@ -14,15 +14,15 @@ export default {
 export const Search = (): JSX.Element => (
   <SearchBar
     handleSubmit={() => console.log('Submitted')}
-    searchResult=""
-    setSearchResult={(searchResult) => console.log(searchResult)}
+    searchValue=""
+    setSearchValue={(searchValue) => console.log(searchValue)}
   />
 );
 
 export const SearchWithString = (): JSX.Element => (
   <SearchBar
     handleSubmit={() => console.log('Submitted')}
-    searchResult="Top Gun"
-    setSearchResult={(searchResult) => console.log(searchResult)}
+    searchValue="Top Gun"
+    setSearchValue={(searchValue) => console.log(searchValue)}
   />
 );
