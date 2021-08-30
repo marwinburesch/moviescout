@@ -10,7 +10,7 @@ export type CardProps = {
   genres: string[];
   image: string | null;
   isBookmarked?: boolean;
-  onBookmarkClick: () => void;
+  onBookmarkClick: (title: string) => void;
   children: React.ReactNode;
 };
 
@@ -34,7 +34,7 @@ export default function Card({
           <MovieButton
             iconType="bookmark"
             isActive={isBookmarked}
-            onButtonClick={onBookmarkClick}
+            onButtonClick={() => onBookmarkClick(title)}
           ></MovieButton>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Home from './pages/Home/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App(): JSX.Element {
@@ -9,7 +10,7 @@ function App(): JSX.Element {
           <main>About</main>
         </Route>
         <Route path="/">
-          <main>Home</main>
+          <Home />
         </Route>
       </Switch>
     </BrowserRouter>
