@@ -62,7 +62,6 @@
   line-height: 1.2rem;
 }
 
-.ratingWrapper {
-  margin-top: 0.5rem;
-  margin-bottom: -0.5rem;
+.bottomSection {
+  padding: 1rem 0.5rem;
 }

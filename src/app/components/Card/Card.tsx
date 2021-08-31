@@ -38,7 +38,7 @@ export default function Card({
           ></MovieButton>
         </div>
       </div>
-      <section>
+      <section className={styles.bottomSection}>
         <p className={styles.title}>{title}</p>
         <div className={styles.ratingWrapper}>
           <Rating rating={rating} maxRating={5}></Rating>
