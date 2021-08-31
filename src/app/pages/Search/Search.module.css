@@ -10,10 +10,6 @@
   padding: 1rem 0 0 0.7rem;
 }
 
-main {
-  overflow: auto;
-}
-
 .search {
   padding: 1rem;
 }
@@ -25,11 +21,13 @@ main {
 .searchResult {
   padding-left: 1rem;
 }
+
 .cards {
   display: grid;
   gap: 1rem;
   padding: 0 1rem;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  overflow: auto;
 }
 
 .tagGroup {
