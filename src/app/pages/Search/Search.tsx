@@ -29,19 +29,20 @@ export default function Search(): JSX.Element {
       <p className={styles.searchResult}>Search Results(3)</p>
 
       <main className={styles.cards}>
-        {mockCards?.map((mockCard) => (
-          <Card
-            key={mockCard.title}
-            title={mockCard.title}
-            rating={mockCard.rating}
-            image={mockCard.image}
-            layout="detail"
-            genres={mockCard.genres}
-            onBookmarkClick={() => console.log('hallo')}
-          >
-            {mockCard.children}
-          </Card>
-        ))}
+        {mockCards &&
+          mockCards.map((mockCard) => (
+            <Card
+              key={mockCard.title}
+              title={mockCard.title}
+              rating={mockCard.rating}
+              image={mockCard.image}
+              layout="detail"
+              genres={mockCard.genres}
+              onBookmarkClick={() => console.log('hallo')}
+            >
+              {mockCard.children}
+            </Card>
+          ))}
       </main>
       <Navigation activeLink="search" />
     </div>
