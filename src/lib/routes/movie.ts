@@ -2,6 +2,7 @@ import { Router } from 'express';
 import {
   getLatestMovies,
   getMovie,
+  getMoviesByGenre,
   getPopularMovies,
   searchMovie,
 } from '../models/movie';
@@ -22,13 +23,35 @@ router.get('/latest', async (_req, res) => {
   res.json(latestMovies);
 });
 
+router.get('/discover', async (req, res) => {
+  const { genre } = req.query;
+  if (!genre) {
+    res.status(400).json({ message: 'Genre is required' });
+    return;
+  } else if (typeof genre !== 'string') {
+    res.status(400).json({ message: 'Genre must be a string' });
+    return;
+  }
+  const discoverMovies = await getMoviesByGenre(genre);
+  res.json(discoverMovies);
+});
+
 router.get('/search', async (req, res) => {
-  const query = req.query.q;
+  const { query, genre } = req.query;
   if (!query) {
     res.status(400).json({ message: 'Query is required' });
     return;
   } else if (typeof query !== 'string') {
     res.status(400).json({ message: 'Query must be a string' });
+    return;
+  }
+  if (genre) {
+    if (typeof genre !== 'string') {
+      res.status(400).json({ message: 'Genre must be a string' });
+      return;
+    }
+    const movies = await searchMovie(query, genre);
+    res.json(movies);
     return;
   }
   const movies = await searchMovie(query);

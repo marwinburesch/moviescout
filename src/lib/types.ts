@@ -1,3 +1,5 @@
+import { GENRES } from './genreMap';
+
 export type MoviesFromAPI = {
   page?: number;
   results: MovieFromAPI[];
@@ -10,7 +12,7 @@ export type MovieFromAPI = {
   adult: boolean;
   overview: string;
   release_date: string;
-  genre_ids: GenreIDs[];
+  genre_ids: GenreID[];
   id: number;
   original_title: string;
   original_language: string;
@@ -73,20 +75,4 @@ export type Movie = {
   genres: string[];
 };
 
-export type GenreIDs =
-  | 28
-  | 12
-  | 16
-  | 35
-  | 80
-  | 99
-  | 18
-  | 10751
-  | 14
-  | 36
-  | 27
-  | 10402
-  | 9648
-  | 10749
-  | 878
-  | 10770;
+export type GenreID = keyof typeof GENRES;
