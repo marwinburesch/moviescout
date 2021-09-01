@@ -13,19 +13,21 @@ function Rating({
     <section className={`${styles.rating} ${className}`}>
       <p className={styles.ratingValue}>{rating}</p>
       <div className={styles.starContainer}>
-        {Array.from({ length: maxRating }, (_, i) => i + 1).map((value) => {
-          let starStatus: 'active' | 'inactive' | 'halfActive';
-          if (value < rating + 1) {
-            if (rating % 1 === 0 || rating > value) {
-              starStatus = 'active';
+        {Array.from({ length: maxRating }, (_, i) => i + 1).map(
+          (value, index) => {
+            let starStatus: 'active' | 'inactive' | 'halfActive';
+            if (value < rating + 1) {
+              if (rating % 1 === 0 || rating > value) {
+                starStatus = 'active';
+              } else {
+                starStatus = 'halfActive';
+              }
             } else {
-              starStatus = 'halfActive';
+              starStatus = 'inactive';
             }
-          } else {
-            starStatus = 'inactive';
+            return <RatingIcon iconState={starStatus} key={index} />;
           }
-          return <RatingIcon iconState={starStatus} />;
-        })}
+        )}
       </div>
     </section>
   );
