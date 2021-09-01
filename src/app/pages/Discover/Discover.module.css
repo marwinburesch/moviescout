@@ -1,0 +1,31 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  background-color: var(--bg-primary);
+  grid-template-rows: auto 1fr auto;
+  grid-auto-flow: row;
+}
+
+.topSection {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 2.5rem 0 0 1rem;
+  align-items: center;
+}
+
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding: 1rem;
+  gap: 1rem;
+  overflow: scroll;
+}
+
+.tagGroup {
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
