@@ -12,7 +12,7 @@ export default function Search(): JSX.Element {
   const [searchValue, setSearchValue] = useState('');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const { data: movies } = useSearchMovies(searchQuery);
+  const { movies } = useSearchMovies(searchQuery);
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
