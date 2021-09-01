@@ -1,5 +1,5 @@
 import useFetch from './useFetch';
-import { Movie } from '../../lib/types';
+import type { Movie } from '../../lib/types';
 
 export default function useDiscover(genre: string): {
   movies: Movie[] | null;
