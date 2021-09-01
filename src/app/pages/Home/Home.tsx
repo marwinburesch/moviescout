@@ -27,14 +27,14 @@ export default function Home(): JSX.Element {
       <div className={styles.innerContainer}>
         <Header className={styles.header}>Top Five</Header>
         <section className={styles.topFiveCards}>
-          {latestMovies?.map((element) => {
+          {latestMovies?.map((movie) => {
             return (
               <Card
-                key={element.id}
+                key={movie.id}
                 layout="wide"
-                {...element}
-                children={element.overview}
-                isBookmarked={bookmarked.includes(element.id)}
+                {...movie}
+                children={movie.overview}
+                isBookmarked={bookmarked.includes(movie.id)}
                 onBookmarkClick={handleBookmarkClick}
               />
             );
@@ -49,14 +49,14 @@ export default function Home(): JSX.Element {
             </div>
           </div>
           <div className={styles.latestContainer}>
-            {topFiveMovies?.map((element) => {
+            {topFiveMovies?.map((movie) => {
               return (
                 <Card
-                  key={element.id}
+                  key={movie.id}
                   layout="detail"
-                  {...element}
-                  children={element.overview}
-                  isBookmarked={bookmarked.includes(element.id)}
+                  {...movie}
+                  children={movie.overview}
+                  isBookmarked={bookmarked.includes(movie.id)}
                   onBookmarkClick={handleBookmarkClick}
                 />
               );
