@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
 
   const { latestMovies } = useLatestMovies();
 
-  const { topFiveMoviesData } = useTopFiveMovies();
+  const { topFiveMovies } = useTopFiveMovies();
 
   function handleBookmarkClick(id: number) {
     let newBookmarked = null;
@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
       <div className={styles.innerContainer}>
         <Header className={styles.header}>Top Five</Header>
         <section className={styles.topFiveCards}>
-          {topFiveMoviesData?.map((element) => {
+          {latestMovies?.map((element) => {
             return (
               <Card
                 key={element.id}
@@ -52,7 +52,7 @@ export default function Home(): JSX.Element {
             </div>
           </div>
           <div className={styles.latestContainer}>
-            {latestMoviesData?.map((element) => {
+            {topFiveMovies?.map((element) => {
               return (
                 <Card
                   key={element.id}
