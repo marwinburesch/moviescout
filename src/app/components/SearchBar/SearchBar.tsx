@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './SearchBar.module.css';
 import SearchIcon from '../assets/SearchIcon';
+import styles from './SearchBar.module.css';
 
 type SearchBarProps = {
-  searchValue: string;
-  handleSubmit: () => void;
-  setSearchValue: (searchValue: string) => void;
+  handleSubmit: (event: React.FormEvent) => void;
   className?: string;
+  searchValue: string;
+  setSearchValue: (searchValue: string) => void;
 };
 
 function SearchBar({

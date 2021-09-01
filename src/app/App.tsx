@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './pages/Home/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Search from './pages/Search/Search';
 import Discover from './pages/Discover/Discover';
 import Bookmarks from './pages/Bookmarks/Bookmarks';
 
@@ -13,6 +14,9 @@ function App(): JSX.Element {
         </Route>
         <Route path="/bookmark">
           <Bookmarks />
+        </Route>
+        <Route path="/search">
+          <Search />
         </Route>
         <Route path="/about">
           <main>About</main>

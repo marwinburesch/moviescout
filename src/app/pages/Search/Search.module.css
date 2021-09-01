@@ -1,0 +1,35 @@
+.page {
+  display: grid;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh;
+  grid-template-rows: auto auto auto auto 1fr auto;
+}
+
+.header {
+  padding: 1rem 0 0 0.7rem;
+}
+
+.search {
+  padding: 1rem;
+}
+
+.searchbar {
+  margin: 1rem;
+}
+
+.searchResult {
+  padding-left: 1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  overflow: auto;
+}
+
+.tagGroup {
+  padding-left: 1rem;
+}
