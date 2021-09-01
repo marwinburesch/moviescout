@@ -2,22 +2,19 @@ import { Movie } from '../../lib/types';
 import useFetch from './useFetch';
 
 export default function useTopFiveMovies(): {
-  topFiveMoviesData: Movie[] | null;
+  topFiveMovies: Movie[] | null;
   topFiveMoviesIsLoading: boolean;
   topFiveMoviesErrorMessage: string | null;
-  topFiveMoviesRefetch: () => void;
 } {
   const {
-    data: topFiveMoviesData,
+    data: topFiveMovies,
     isLoading: topFiveMoviesIsLoading,
     errorMessage: topFiveMoviesErrorMessage,
-    refetch: topFiveMoviesRefetch,
   } = useFetch<Movie[]>(`/api/movie/popular`);
 
   return {
-    topFiveMoviesData,
+    topFiveMovies,
     topFiveMoviesIsLoading,
     topFiveMoviesErrorMessage,
-    topFiveMoviesRefetch,
   };
 }

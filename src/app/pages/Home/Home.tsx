@@ -10,7 +10,7 @@ import useTopFiveMovies from '../../hooks/useTopFiveMovies';
 export default function Home(): JSX.Element {
   const [bookmarked, setBookmarked] = useState<number[]>([436969, 675445]);
 
-  const { latestMoviesData } = useLatestMovies();
+  const { latestMovies } = useLatestMovies();
 
   const { topFiveMoviesData } = useTopFiveMovies();
 

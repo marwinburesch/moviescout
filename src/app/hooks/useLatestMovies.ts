@@ -2,22 +2,19 @@ import { Movie } from '../../lib/types';
 import useFetch from './useFetch';
 
 export default function useLatestMovies(): {
-  latestMoviesData: Movie[] | null;
+  latestMovies: Movie[] | null;
   latestMoviesIsLoading: boolean;
   latestMoviesErrorMessage: string | null;
-  latestMoviesRefetch: () => void;
 } {
   const {
-    data: latestMoviesData,
+    data: latestMovies,
     isLoading: latestMoviesIsLoading,
     errorMessage: latestMoviesErrorMessage,
-    refetch: latestMoviesRefetch,
   } = useFetch<Movie[]>(`/api/movie/latest`);
 
   return {
-    latestMoviesData,
+    latestMovies,
     latestMoviesIsLoading,
     latestMoviesErrorMessage,
-    latestMoviesRefetch,
   };
 }
