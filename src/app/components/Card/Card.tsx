@@ -5,18 +5,20 @@ import styles from './Card.module.css';
 
 export type CardProps = {
   layout?: 'detail' | 'compact' | 'wide';
+  id: number;
   title: string;
   rating: number;
   genres: string[];
   image: string | null;
   isBookmarked?: boolean;
-  onBookmarkClick: (title: string) => void;
+  onBookmarkClick: (id: number) => void;
   children: React.ReactNode;
   className?: string;
 };
 
 export default function Card({
   layout = 'detail',
+  id,
   title,
   rating,
   genres,
@@ -40,7 +42,7 @@ export default function Card({
           <MovieButton
             iconType="bookmark"
             isActive={isBookmarked}
-            onButtonClick={() => onBookmarkClick(title)}
+            onButtonClick={() => onBookmarkClick(id)}
           ></MovieButton>
         </div>
       </div>
