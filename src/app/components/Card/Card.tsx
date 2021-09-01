@@ -10,8 +10,9 @@ export type CardProps = {
   genres: string[];
   image: string | null;
   isBookmarked?: boolean;
-  onBookmarkClick: () => void;
+  onBookmarkClick: (title: string) => void;
   children: React.ReactNode;
+  className?: string;
 };
 
 export default function Card({
@@ -23,9 +24,14 @@ export default function Card({
   isBookmarked = false,
   onBookmarkClick,
   children,
+  className,
 }: CardProps): JSX.Element {
   return (
-    <article className={`${styles.article} ${styles[`article--${layout}`]}`}>
+    <article
+      className={`${styles.article} ${
+        styles[`article--${layout}`]
+      } ${className}`}
+    >
       <div
         className={styles.image}
         style={{ backgroundImage: `url(${image})` }}
@@ -34,7 +40,7 @@ export default function Card({
           <MovieButton
             iconType="bookmark"
             isActive={isBookmarked}
-            onButtonClick={onBookmarkClick}
+            onButtonClick={() => onBookmarkClick(title)}
           ></MovieButton>
         </div>
       </div>

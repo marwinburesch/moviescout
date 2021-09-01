@@ -1,0 +1,62 @@
+.container {
+  background-color: var(--bg-primary);
+  display: grid;
+  height: 100vh;
+}
+
+.innerContainer {
+  overflow: scroll;
+}
+
+.header {
+  padding: 2rem 0 1.25rem 1.25rem;
+}
+
+.latestHeader {
+  padding: 2rem 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seeMore {
+  font-family: var(--font-face);
+  text-transform: uppercase;
+}
+
+.seeMore a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.cardCompact {
+  margin-right: 1.25rem;
+}
+
+.topFiveCards {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-columns: minmax(20rem, 1fr);
+}
+
+.topFiveCards::-webkit-scrollbar,
+.innerContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.topFiveCards > :first-child {
+  padding-left: 1.25rem;
+}
+
+.topFiveCards > :last-child {
+  padding-right: 1.25rem;
+}
+
+.latestContainer {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem 0 1.5rem 1.25rem;
+}

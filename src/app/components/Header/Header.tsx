@@ -7,16 +7,20 @@ type HeaderProps = {
   children?: ReactNode;
   withBackButton?: boolean;
   isHighlighted?: boolean;
+  className?: string;
 };
 
 function Header({
   children,
   withBackButton = false,
   isHighlighted = false,
+  className,
 }: HeaderProps): JSX.Element {
   return (
     <header
-      className={`${styles.headerContainer} ${children ? '' : styles.flagGap}`}
+      className={`${styles.headerContainer} ${className} ${
+        children ? '' : styles.flagGap
+      }`}
     >
       {withBackButton && <BackButton isHighlighted={isHighlighted} />}
       {children && (

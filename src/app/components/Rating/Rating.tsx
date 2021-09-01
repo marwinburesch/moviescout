@@ -2,11 +2,15 @@ import React from 'react';
 import styles from './Rating.module.css';
 import RatingIcon from '../RatingIcon/RatingIcon';
 
-type RatingProps = { rating: number; maxRating?: number };
+type RatingProps = { rating: number; maxRating?: number; className?: string };
 
-function Rating({ rating, maxRating = 5 }: RatingProps): JSX.Element {
+function Rating({
+  rating,
+  maxRating = 5,
+  className,
+}: RatingProps): JSX.Element {
   return (
-    <section className={styles.rating}>
+    <section className={`${styles.rating} ${className}`}>
       <p className={styles.ratingValue}>{rating}</p>
       <div className={styles.starContainer}>
         {Array.from({ length: maxRating }, (_, i) => i + 1).map((value) => {
