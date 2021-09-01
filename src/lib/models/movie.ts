@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { GENRES } from '../genreMap';
-import {
+import type {
   GenreID,
   Movie,
   MovieDetailsFromAPI,
