@@ -1,0 +1,24 @@
+.searchBar__input {
+  background-color: var(--bg-secondary);
+  border-style: none;
+  font-family: var(--primary-font);
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.searchBar__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  margin-left: 0.4em;
+  background: url('../assets/DeleteIcon.svg');
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  background-color: var(--bg-secondary);
+  border-radius: 0.3em;
+}

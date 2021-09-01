@@ -1,0 +1,19 @@
+.rating {
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.ratingValue {
+  font-size: inherit;
+  font-family: var(--primary-font);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.starContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
