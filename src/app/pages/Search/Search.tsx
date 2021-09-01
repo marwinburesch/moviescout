@@ -4,15 +4,21 @@ import Header from '../../components/Header/Header';
 import Navigation from '../../components/Navigation/Navigation';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import TagGroup from '../../components/TagGroup/TagGroup';
-import { mockCards, mockTagGroupProps } from './Mockdata';
+import useSearchMovies from '../../hooks/useSearchMovies';
+import { mockTagGroupProps } from './Mockdata';
 import styles from './Search.module.css';
 
 export default function Search(): JSX.Element {
   const [searchValue, setSearchValue] = useState('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const { data: movies } = useSearchMovies(searchQuery);
+
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    console.log('huhu');
+    setSearchQuery(searchValue);
   }
+
   return (
     <div className={styles.page}>
       <Header className={styles.header} withBackButton isHighlighted>
@@ -29,18 +35,19 @@ export default function Search(): JSX.Element {
       <p className={styles.searchResult}>Search Results(3)</p>
 
       <main className={styles.cards}>
-        {mockCards &&
-          mockCards.map((mockCard) => (
+        {movies &&
+          movies[0]?.title &&
+          movies.map((movie) => (
             <Card
-              key={mockCard.title}
-              title={mockCard.title}
-              rating={mockCard.rating}
-              image={mockCard.image}
+              key={movie.id}
+              title={movie.title}
+              rating={movie.rating}
+              image={movie.image}
               layout="detail"
-              genres={mockCard.genres}
-              onBookmarkClick={() => console.log('hallo')}
+              genres={movie.genres}
+              onBookmarkClick={() => console.log('bookmark')}
             >
-              {mockCard.children}
+              {movie.overview}
             </Card>
           ))}
       </main>
