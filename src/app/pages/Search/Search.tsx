@@ -10,14 +10,7 @@ import styles from './Search.module.css';
 
 export default function Search(): JSX.Element {
   const [searchValue, setSearchValue] = useState('');
-  const [searchQuery, setSearchQuery] = useState<string>('');
-
-  const { movies } = useSearchMovies(searchQuery);
-
-  function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setSearchQuery(searchValue);
-  }
+  const { movies } = useSearchMovies(searchValue);
 
   return (
     <div className={styles.page}>
@@ -28,7 +21,7 @@ export default function Search(): JSX.Element {
         className={styles.searchbar}
         searchValue={searchValue}
         setSearchValue={setSearchValue}
-        handleSubmit={handleSubmit}
+        handleSubmit={(event) => event.preventDefault()}
       />
 
       <TagGroup className={styles.tagGroup} tagList={mockTagGroupProps} />
