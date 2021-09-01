@@ -10,7 +10,7 @@ export default function useSearchMovies(
   isLoading: boolean;
 } {
   const result = useFetch<Movie[]>(
-    `/api/movie/search?query=${query}${genre && `&genre=${genre}`}`
+    `/api/movie/search?query=${query}${genre ? `&genre=${genre}` : ``}`
   );
   return {
     movies: result.data,
