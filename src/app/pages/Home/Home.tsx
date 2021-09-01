@@ -15,13 +15,10 @@ export default function Home(): JSX.Element {
   const { topFiveMovies } = useTopFiveMovies();
 
   function handleBookmarkClick(id: number) {
-    let newBookmarked = null;
     if (bookmarked.includes(id)) {
-      newBookmarked = bookmarked.filter((element) => element !== id);
-      setBookmarked(newBookmarked);
+      setBookmarked(bookmarked.filter((element) => element !== id));
     } else {
-      newBookmarked = [...bookmarked, id];
-      setBookmarked(newBookmarked);
+      setBookmarked([...bookmarked, id]);
     }
   }
 
