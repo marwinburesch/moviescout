@@ -4,8 +4,6 @@ import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
 import TagGroup from '../../components/TagGroup/TagGroup';
-import useFetch from '../../hooks/useFetch';
-import type { Movie } from '../../../lib/types';
 import useDiscover from '../../hooks/useDiscover';
 
 const mockFunction = () => console.log('📽');
