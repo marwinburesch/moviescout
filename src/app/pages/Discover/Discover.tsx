@@ -6,6 +6,7 @@ import Navigation from '../../components/Navigation/Navigation';
 import TagGroup from '../../components/TagGroup/TagGroup';
 import useFetch from '../../hooks/useFetch';
 import type { Movie } from '../../../lib/types';
+import useDiscover from '../../hooks/useDiscover';
 
 const mockFunction = () => console.log('📽');
 
@@ -105,8 +106,8 @@ const mockMovies = [
 ];
 
 export default function Discover(): JSX.Element {
-  const { data, errorMessage } = useFetch<Movie>('/api/movie/436969');
-  console.log(data);
+  const { movies, isLoading, errorMessage } = useDiscover('Action');
+  console.log(movies);
   console.log(errorMessage);
   function handleBookmarkClick(movie: string) {
     console.log(movie);
