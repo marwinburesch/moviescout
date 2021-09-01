@@ -4,7 +4,7 @@ import RatingIcon from '../RatingIcon/RatingIcon';
 import styles from './Card.module.css';
 
 export type CardProps = {
-  layout: 'detail' | 'compact' | 'wide';
+  layout?: 'detail' | 'compact' | 'wide';
   title: string;
   rating: number | null;
   genres: string[];
@@ -16,7 +16,7 @@ export type CardProps = {
 };
 
 export default function Card({
-  layout,
+  layout = 'detail',
   title,
   rating,
   genres,
