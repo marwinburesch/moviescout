@@ -1,12 +1,12 @@
 import React from 'react';
 import MovieButton from '../MovieButton/MovieButton';
-import RatingIcon from '../RatingIcon/RatingIcon';
+import Rating from '../Rating/Rating';
 import styles from './Card.module.css';
 
 export type CardProps = {
   layout?: 'detail' | 'compact' | 'wide';
   title: string;
-  rating: number | null;
+  rating: number;
   genres: string[];
   image: string | null;
   isBookmarked?: boolean;
@@ -44,15 +44,10 @@ export default function Card({
           ></MovieButton>
         </div>
       </div>
-      <section>
+      <section className={styles.bottomSection}>
         <p className={styles.title}>{title}</p>
-        <div>
-          {rating}
-          <RatingIcon iconState="active" />
-          <RatingIcon iconState="active" />
-          <RatingIcon iconState="active" />
-          <RatingIcon iconState="active" />
-          <RatingIcon iconState="active" />
+        <div className={styles.ratingWrapper}>
+          <Rating rating={rating} maxRating={5}></Rating>
         </div>
         {layout === 'detail' && (
           <>

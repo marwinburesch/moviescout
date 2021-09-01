@@ -11,7 +11,7 @@ function Rating({
 }: RatingProps): JSX.Element {
   return (
     <section className={`${styles.rating} ${className}`}>
-      <p>{rating}</p>
+      <p className={styles.ratingValue}>{rating}</p>
       <div className={styles.starContainer}>
         {Array.from({ length: maxRating }, (_, i) => i + 1).map((value) => {
           let starStatus: 'active' | 'inactive' | 'halfActive';
