@@ -9,6 +9,7 @@
   min-height: 17rem;
   grid-template-columns: 40% 60%;
 }
+
 .article--wide {
   grid-template-rows: 12.5rem auto;
 }
@@ -16,6 +17,7 @@
 .article--compact {
   grid-template-rows: 17rem auto;
 }
+
 .image {
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,6 +27,7 @@
   border-radius: 1rem;
   height: 100%;
 }
+
 .bookmark {
   position: absolute;
   right: 1rem;
