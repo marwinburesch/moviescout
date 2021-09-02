@@ -84,7 +84,9 @@ export async function searchMovie(
   const formattedMovies = movies.results
     .filter((movie: MovieFromAPI) => {
       if (genreId) {
-        return movie.genre_ids.includes(genreId);
+        return movie.genre_ids
+          .map((genreId) => genreId.toString())
+          .includes(genreId);
       }
       return movie;
     })
