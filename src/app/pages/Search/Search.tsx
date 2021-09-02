@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
+import { GENRES } from '../../../lib/genreMap';
 import Card from '../../components/Card/Card';
 import Header from '../../components/Header/Header';
 import Navigation from '../../components/Navigation/Navigation';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import TagGroup from '../../components/TagGroup/TagGroup';
 import useSearchMovies from '../../hooks/useSearchMovies';
-import { mockTagGroupProps } from './Mockdata';
 import styles from './Search.module.css';
 
 export default function Search(): JSX.Element {
   const [searchValue, setSearchValue] = useState('');
-  const { movies } = useSearchMovies(searchValue);
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+
+  const { movies } = useSearchMovies(searchValue, activeTag);
+
+  const genres = Object.values(GENRES);
+  genres.sort();
+  const tags = genres.map((tag) => {
+    return {
+      children: tag,
+      onClick: () => setActiveTag(tag),
+      active: tag === activeTag,
+    };
+  });
 
   return (
     <div className={styles.page}>
@@ -24,7 +36,7 @@ export default function Search(): JSX.Element {
         handleSubmit={(event) => event.preventDefault()}
       />
 
-      <TagGroup className={styles.tagGroup} tagList={mockTagGroupProps} />
+      <TagGroup className={styles.tagGroup} tagList={tags} />
       <p className={styles.searchResult}>Search Results(3)</p>
 
       <main className={styles.cards}>
