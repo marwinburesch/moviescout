@@ -19,7 +19,8 @@ export default function Search(): JSX.Element {
   const tags = genres.map((tag) => {
     return {
       children: tag,
-      onClick: () => setActiveTag(tag),
+      onClick: () =>
+        tag !== activeTag ? setActiveTag(tag) : setActiveTag(null),
       active: tag === activeTag,
     };
   });
@@ -37,7 +38,11 @@ export default function Search(): JSX.Element {
       />
 
       <TagGroup className={styles.tagGroup} tagList={tags} />
-      <p className={styles.searchResult}>Search Results(3)</p>
+      <p className={styles.searchResult}>
+        {movies && movies.length > 0
+          ? `Search Results (${movies.length})`
+          : 'No Results'}
+      </p>
 
       <main className={styles.cards}>
         {movies &&
