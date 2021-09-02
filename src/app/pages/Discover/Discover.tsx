@@ -9,7 +9,9 @@ import useDiscover from '../../hooks/useDiscover';
 import { GENRES } from '../../../lib/genreMap';
 
 export default function Discover(): JSX.Element {
-  const [selectedGenre, setSelectedGenre] = useState<string | null>('Action');
+  const [selectedGenre, setSelectedGenre] = useState<string | null>(
+    'Adventure'
+  );
   const { movies } = useDiscover(selectedGenre);
   const [bookmarkedMovies, setBookmarkedMovies] = useState<number[]>([]);
 
