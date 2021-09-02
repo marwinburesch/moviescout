@@ -25,6 +25,7 @@ export default function Details(): JSX.Element {
             children="See on The Movie DB"
             url={`https://www.themoviedb.org/movie/${id}`}
             hasIcon={false}
+            className={styles.actionLink}
           />
         </div>
       </section>
