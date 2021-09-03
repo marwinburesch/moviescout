@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
 import TagGroup from '../../components/TagGroup/TagGroup';
-import { Movie } from '../../../lib/types';
+import type { Movie } from '../../../lib/types';
 import useDiscover from '../../hooks/useDiscover';
 import { GENRES } from '../../../lib/genreMap';
 

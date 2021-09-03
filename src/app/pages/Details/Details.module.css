@@ -1,0 +1,63 @@
+.container {
+  background: var(--bg-primary);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.header {
+  align-self: start;
+  padding: 1rem;
+  grid-area: 1/1/2/2;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.info {
+  padding: 0 1rem;
+}
+
+.details {
+  grid-area: 1/1/2/2;
+  overflow: scroll;
+}
+
+.title {
+  color: var(--text-primary);
+}
+
+.description {
+  color: var(--text-secondary);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+.readMore {
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+.ctaText {
+  color: var(--color-primary);
+}
+
+.actionLink {
+  margin: 1.5rem 0;
+}

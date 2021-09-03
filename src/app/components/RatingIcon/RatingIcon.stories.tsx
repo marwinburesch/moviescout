@@ -1,6 +1,6 @@
 import React from 'react';
 import RatingIcon from './RatingIcon';
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 import type { RatingIconProps } from './RatingIcon';
 
 export default {
