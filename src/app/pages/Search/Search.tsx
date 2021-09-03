@@ -49,6 +49,7 @@ export default function Search(): JSX.Element {
           movies[0]?.title &&
           movies.map((movie) => (
             <Card
+              id={movie.id}
               key={movie.id}
               title={movie.title}
               rating={movie.rating}
