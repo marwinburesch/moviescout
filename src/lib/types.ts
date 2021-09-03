@@ -1,4 +1,4 @@
-import { GENRES } from './genreMap';
+import type { GENRES } from './genreMap';
 
 export type MoviesFromAPI = {
   page?: number;

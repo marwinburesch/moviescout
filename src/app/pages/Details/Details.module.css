@@ -47,6 +47,17 @@
   line-height: 1.2rem;
 }
 
+.readMore {
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
 .ctaText {
   color: var(--color-primary);
+}
+
+.actionLink {
+  margin: 1.5rem 0;
 }

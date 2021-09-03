@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function useFetch<T>(url: string): {
   data: T | null;
@@ -6,19 +6,20 @@ export default function useFetch<T>(url: string): {
   isLoading: boolean;
   refetch: () => void;
 } {
-  const [data, setData] = useState<T | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [data, setData] = useState(null);
   const isLoading = data === null;
 
   function refetch() {
     fetch(url)
       .then((response) => response.json())
-      .then(setData)
-      .catch(setErrorMessage);
+      .then((response) => setData(response))
+      .catch((error) => setErrorMessage(error.toString()));
   }
 
   useEffect(() => {
     refetch();
   }, [url]);
-  return { data, errorMessage, isLoading, refetch };
+
+  return { data, isLoading, errorMessage, refetch };
 }
