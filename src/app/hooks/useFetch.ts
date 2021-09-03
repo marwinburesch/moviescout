@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 
 export default function useFetch<T>(url: string): {
   data: T | null;
-  isLoading: boolean;
   errorMessage: string | null;
+  isLoading: boolean;
   refetch: () => void;
 } {
-  const [data, setData] = useState<T | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [data, setData] = useState(null);
   const isLoading = data === null;
 
   function refetch() {
     fetch(url)
       .then((response) => response.json())
-      .then(setData)
+      .then((response) => setData(response))
       .catch((error) => setErrorMessage(error.toString()));
   }
 
