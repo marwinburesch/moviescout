@@ -1,6 +1,6 @@
 import React from 'react';
 import TagGroup from './TagGroup';
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 import type { TagGroupProps } from './TagGroup';
 
 export default {

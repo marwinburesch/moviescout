@@ -1,6 +1,6 @@
 import React from 'react';
 import ActionLink from './ActionLink';
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 import type { ActionLinkProps } from './ActionLink';
 
 export default {
