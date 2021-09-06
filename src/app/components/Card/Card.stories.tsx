@@ -14,6 +14,7 @@ export default {
 export const DetailCard = (): JSX.Element => {
   return (
     <Card
+      id={1}
       layout="detail"
       title="Pulp Fiction"
       rating={4.5}
@@ -31,6 +32,7 @@ export const DetailCard = (): JSX.Element => {
 
 export const WideCard = (): JSX.Element => (
   <Card
+    id={1}
     layout="wide"
     title="Pulp Fiction"
     rating={4.5}
@@ -46,6 +48,7 @@ export const WideCard = (): JSX.Element => (
 );
 export const CompactCard = (): JSX.Element => (
   <Card
+    id={1}
     layout="compact"
     title="Pulp Fiction"
     rating={4.5}
@@ -62,6 +65,7 @@ export const CompactCard = (): JSX.Element => (
 
 export const TestCard = (): JSX.Element => (
   <Card
+    id={1}
     layout="compact"
     title="Pulp Fiction"
     rating={4.5}
@@ -79,6 +83,7 @@ export const TestCard = (): JSX.Element => (
 export const OverflowTestCard = (): JSX.Element => {
   return (
     <Card
+      id={1}
       layout="detail"
       title="Pulp FictionPulp FictionPulp FictionPulp FictionPulp FictionPulp Fiction"
       rating={4.5}
