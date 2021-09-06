@@ -1,4 +1,4 @@
-import { Movie } from '../../lib/types';
+import type { Movie } from '../../lib/types';
 import useFetch from './useFetch';
 
 export default function useMovieDetails(id: string): {

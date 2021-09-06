@@ -1,111 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Discover.module.css';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
 import TagGroup from '../../components/TagGroup/TagGroup';
-
-const mockFunction = () => console.log('📽');
-
-const mockTags = [
-  {
-    count: '',
-    active: false,
-    onClick: mockFunction,
-    children: 'all',
-  },
-  {
-    count: '4',
-    active: false,
-    onClick: mockFunction,
-    children: 'animation',
-  },
-  {
-    count: '6',
-    active: true,
-    onClick: mockFunction,
-    children: 'action',
-  },
-  {
-    count: '9',
-    active: false,
-    onClick: mockFunction,
-    children: 'comedy',
-  },
-  {
-    count: '7',
-    active: false,
-    onClick: mockFunction,
-    children: 'sci fi',
-  },
-];
-
-const mockMovies = [
-  {
-    title: 'Findet Nemo',
-    genres: ['Animation'],
-    image:
-      'https://images-na.ssl-images-amazon.com/images/I/71EZScEcWuL._RI_.jpg',
-    rating: 3.5,
-    children: '',
-  },
-  {
-    title: 'Resident Evil',
-    genres: [''],
-    image: 'https://m.media-amazon.com/images/I/510hYySJ6HL._AC_.jpg',
-    rating: 3.5,
-    children: '',
-  },
-  {
-    title: 'Hero',
-    genres: ['Adventure', 'Action', 'History'],
-    image:
-      'https://m.media-amazon.com/images/M/MV5BMWQ2MjQ0OTctMWE1OC00NjZjLTk3ZDAtNTk3NTZiYWMxYTlmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg',
-    rating: 3.5,
-    children: '',
-  },
-  {
-    title: 'Avatar',
-    genres: [''],
-    image: 'https://m.media-amazon.com/images/I/41zWyLXIetL._AC_.jpg',
-    rating: 3.5,
-    children: '',
-  },
-  {
-    title: 'Fight Club',
-    genres: [''],
-    image: 'https://m.media-amazon.com/images/I/51JyX1NtDfL._AC_.jpg',
-    rating: 3.5,
-    children: '',
-  },
-  {
-    title: 'Ben Hur',
-    genres: [''],
-    image: 'https://m.media-amazon.com/images/I/51J69UGeCjL._AC_.jpg',
-    rating: 3.5,
-    children: '',
-  },
-  {
-    title: 'Vier Fäuste für ein Halleluja',
-    genres: [''],
-    image: 'https://m.media-amazon.com/images/I/51PZ7G0YMTL.jpg',
-    rating: 3.5,
-    children: '',
-  },
-  {
-    title: 'Adams Family',
-    genres: [''],
-    image: 'https://m.media-amazon.com/images/I/510cRdkFSXL._AC_SY450_.jpg',
-    isBookmarked: false,
-    rating: 3.5,
-    children: '',
-  },
-];
+import type { Movie } from '../../../lib/types';
+import useDiscover from '../../hooks/useDiscover';
+import { GENRES } from '../../../lib/genreMap';
 
 export default function Discover(): JSX.Element {
-  function handleBookmarkClick(movie: string) {
-    console.log(movie);
+  const [selectedGenre, setSelectedGenre] = useState<string | null>(
+    'Adventure'
+  );
+  const { movies } = useDiscover(selectedGenre);
+  const [bookmarkedMovies, setBookmarkedMovies] = useState<number[]>([]);
+
+  function handleBookmarkClick(id: number) {
+    if (bookmarkedMovies.includes(id)) {
+      const filteredBookmarkedMovies = bookmarkedMovies.filter(
+        (movieId) => movieId !== id
+      );
+      setBookmarkedMovies(filteredBookmarkedMovies);
+    } else {
+      const newBookmarkedMovies = [...bookmarkedMovies, id];
+
+      setBookmarkedMovies(newBookmarkedMovies);
+    }
   }
+
+  const genreList = Object.values(GENRES);
+  const tagList = genreList.map((genre) => {
+    return {
+      children: genre,
+      onClick: () => setSelectedGenre(genre),
+      active: genre === selectedGenre,
+    };
+  });
 
   return (
     <div className={styles.container}>
@@ -113,17 +43,17 @@ export default function Discover(): JSX.Element {
         <Header withBackButton isHighlighted>
           Discover
         </Header>
-        <div className={styles.tagGroup}>
-          <TagGroup tagList={mockTags} />
-        </div>
+        <TagGroup tagList={tagList} />
       </section>
       <section className={styles.cardWrapper}>
-        {mockMovies.length !== 0 &&
-          mockMovies.map((movie) => (
+        {movies !== null &&
+          movies.map((movie: Movie) => (
             <Card
               key={movie.title}
               layout="compact"
-              onBookmarkClick={() => handleBookmarkClick(movie.title)}
+              children={movie.overview}
+              isBookmarked={bookmarkedMovies.includes(movie.id)}
+              onBookmarkClick={() => handleBookmarkClick(movie.id)}
               {...movie}
             />
           ))}

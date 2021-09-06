@@ -9,6 +9,8 @@ function Rating({
   maxRating = 5,
   className,
 }: RatingProps): JSX.Element {
+  const realRating = rating / 2;
+  rating = Math.round(realRating * 2) / 2;
   return (
     <section className={`${styles.rating} ${className}`}>
       <p className={styles.ratingValue}>{rating}</p>

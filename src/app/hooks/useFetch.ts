@@ -7,7 +7,7 @@ export default function useFetch<T>(url: string): {
   refetch: () => void;
 } {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<T | null>(null);
   const isLoading = data === null;
 
   function refetch() {
