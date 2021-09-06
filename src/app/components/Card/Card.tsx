@@ -49,7 +49,7 @@ export default function Card({
       <section className={styles.bottomSection}>
         <p className={styles.title}>{title}</p>
         <div className={styles.ratingWrapper}>
-          <Rating rating={rating} maxRating={5}></Rating>
+          <Rating rating={rating / 2} maxRating={5}></Rating>
         </div>
         {layout === 'detail' && (
           <>
