@@ -7,6 +7,7 @@ import Navigation from '../../components/Navigation/Navigation';
 export default function Bookmarks(): JSX.Element {
   const mockupData = [
     {
+      id: 1,
       title: 'Top Gun',
       rating: 5,
       genres: [''],
@@ -15,6 +16,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 2,
       title: 'Southpark 2',
       rating: 5,
       genres: [''],
@@ -23,6 +25,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 3,
       title: 'Lethal Weapon 3',
       rating: 5,
       genres: [''],
@@ -31,6 +34,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 4,
       title: 'Lupin',
       rating: 5,
       genres: [''],
@@ -39,6 +43,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 5,
       title: 'Independence Day',
       rating: 5,
       genres: [''],
@@ -47,6 +52,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 6,
       title: 'Kill Bill',
       rating: 5,
       genres: [''],
@@ -55,6 +61,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 7,
       title: 'Wu-Tang',
       rating: 5,
       genres: [''],
@@ -63,6 +70,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 8,
       title: 'Kids',
       rating: 5,
       genres: [''],
@@ -71,6 +79,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 9,
       title: 'Lion King',
       rating: 5,
       genres: [''],
@@ -79,6 +88,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 10,
       title: 'Der Pate',
       rating: 5,
       genres: [''],
@@ -87,6 +97,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 11,
       title: 'Der Pate 2',
       rating: 5,
       genres: [''],
@@ -95,6 +106,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 12,
       title: 'Star Wars',
       rating: 5,
       genres: [''],
@@ -103,6 +115,7 @@ export default function Bookmarks(): JSX.Element {
       children: '???',
     },
     {
+      id: 13,
       title: 'Casino',
       rating: 5,
       genres: [''],
@@ -128,7 +141,7 @@ export default function Bookmarks(): JSX.Element {
         {mockupData.length !== 0 &&
           movieInfo.map((movie) => (
             <Card
-              key={movie.title}
+              key={movie.id}
               onBookmarkClick={() => handleBookmarkClick(movie.title)}
               {...movie}
             />
