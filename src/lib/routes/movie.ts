@@ -59,16 +59,6 @@ router.get('/search', async (req, res) => {
   res.json(movies);
 });
 
-router.get('/:id', async (req, res) => {
-  const { id } = req.params;
-  try {
-    const movie = await getMovie(id);
-    res.json(movie);
-  } catch (err) {
-    res.status(404).json({ error: 'Movie not found' });
-  }
-});
-
 router.get('/list', async (req, res) => {
   const { ids } = req.query;
   if (!ids) {
@@ -84,6 +74,16 @@ router.get('/list', async (req, res) => {
     res.json(movies);
   } catch (err) {
     res.status(404).json({ error: 'Movie/s not found' });
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const movie = await getMovie(id);
+    res.json(movie);
+  } catch (err) {
+    res.status(404).json({ error: 'Movie not found' });
   }
 });
 
