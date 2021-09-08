@@ -1,19 +1,22 @@
 import useLocalStorage from './useLocalStorage';
 
 export default function useBookmarks(): {
-  bookmarks: number[];
+  bookmarkIds: number[];
   addBookmark: (id: number) => void;
   removeBookmark: (id: number) => void;
 } {
-  const [bookmarks, setBookmarks] = useLocalStorage<number[]>('bookmarks', []);
+  const [bookmarkIds, setBookmarkIds] = useLocalStorage<number[]>(
+    'bookmarks',
+    []
+  );
 
   function addBookmark(id: number) {
-    setBookmarks([...bookmarks, id]);
+    setBookmarkIds([...bookmarkIds, id]);
   }
 
   function removeBookmark(id: number) {
-    setBookmarks(bookmarks.filter((b) => b !== id));
+    setBookmarkIds(bookmarkIds.filter((bookmarkId) => bookmarkId !== id));
   }
 
-  return { bookmarks, addBookmark, removeBookmark };
+  return { bookmarkIds, addBookmark, removeBookmark };
 }
