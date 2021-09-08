@@ -20,7 +20,7 @@ export default function Bookmarks(): JSX.Element {
         {errorMessage && <p>{errorMessage}</p>}
         {!errorMessage && isLoading && <p>Loading...</p>}
         {bookmarkedMovies &&
-          bookmarkedMovies.length !== 0 &&
+          bookmarkedMovies.length > 0 &&
           bookmarkedMovies.map((movie) => (
             <Card
               key={movie.id}
