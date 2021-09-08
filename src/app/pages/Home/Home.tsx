@@ -9,19 +9,11 @@ import useTopFiveMovies from '../../hooks/useTopFiveMovies';
 import useBookmarks from '../../hooks/useBookmarks';
 
 export default function Home(): JSX.Element {
-  const { bookmarkIds, addBookmark, removeBookmark } = useBookmarks();
+  const { bookmarkIds, handleBookmarkClick } = useBookmarks();
 
   const { latestMovies } = useLatestMovies();
 
   const { topFiveMovies } = useTopFiveMovies();
-
-  function handleBookmarkClick(id: number) {
-    if (bookmarkIds.includes(id)) {
-      removeBookmark(id);
-    } else {
-      addBookmark(id);
-    }
-  }
 
   return (
     <div className={styles.container}>
