@@ -1,134 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Bookmarks.module.css';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
+import useBookmarkedMovies from '../../hooks/useBookmarkedMovies';
 
 export default function Bookmarks(): JSX.Element {
-  const mockupData = [
-    {
-      id: 1,
-      title: 'Top Gun',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 2,
-      title: 'Southpark 2',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 3,
-      title: 'Lethal Weapon 3',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 4,
-      title: 'Lupin',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 5,
-      title: 'Independence Day',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 6,
-      title: 'Kill Bill',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 7,
-      title: 'Wu-Tang',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 8,
-      title: 'Kids',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 9,
-      title: 'Lion King',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 10,
-      title: 'Der Pate',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 11,
-      title: 'Der Pate 2',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 12,
-      title: 'Star Wars',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-    {
-      id: 13,
-      title: 'Casino',
-      rating: 5,
-      genres: [''],
-      image: 'string | null',
-      isBookmarked: true,
-      children: '???',
-    },
-  ];
-  const [movieInfo] = useState(mockupData);
-
-  function handleBookmarkClick(movie: string) {
-    console.log(movie);
-  }
+  const { bookmarkedMovies, isLoading, errorMessage, handleBookmarkClick } =
+    useBookmarkedMovies();
 
   return (
     <div className={styles.container}>
@@ -138,11 +17,16 @@ export default function Bookmarks(): JSX.Element {
         </Header>
       </section>
       <main className={styles.cardWrapper}>
-        {mockupData.length !== 0 &&
-          movieInfo.map((movie) => (
+        {errorMessage && <p>{errorMessage}</p>}
+        {!errorMessage && isLoading && <p>Loading...</p>}
+        {bookmarkedMovies &&
+          bookmarkedMovies.length !== 0 &&
+          bookmarkedMovies.map((movie) => (
             <Card
               key={movie.id}
-              onBookmarkClick={() => handleBookmarkClick(movie.title)}
+              onBookmarkClick={() => handleBookmarkClick(movie.id)}
+              isBookmarked={true}
+              children={movie.overview}
               {...movie}
             />
           ))}
