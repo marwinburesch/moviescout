@@ -7,26 +7,14 @@ import TagGroup from '../../components/TagGroup/TagGroup';
 import type { Movie } from '../../../lib/types';
 import useDiscover from '../../hooks/useDiscover';
 import { GENRES } from '../../../lib/genreMap';
+import useBookmarks from '../../hooks/useBookmarks';
 
 export default function Discover(): JSX.Element {
   const [selectedGenre, setSelectedGenre] = useState<string | null>(
     'Adventure'
   );
   const { movies } = useDiscover(selectedGenre);
-  const [bookmarkedMovies, setBookmarkedMovies] = useState<number[]>([]);
-
-  function handleBookmarkClick(id: number) {
-    if (bookmarkedMovies.includes(id)) {
-      const filteredBookmarkedMovies = bookmarkedMovies.filter(
-        (movieId) => movieId !== id
-      );
-      setBookmarkedMovies(filteredBookmarkedMovies);
-    } else {
-      const newBookmarkedMovies = [...bookmarkedMovies, id];
-
-      setBookmarkedMovies(newBookmarkedMovies);
-    }
-  }
+  const { bookmarkIds, handleBookmarkClick } = useBookmarks();
 
   const genreList = Object.values(GENRES);
   const tagList = genreList.map((genre) => {
@@ -52,7 +40,7 @@ export default function Discover(): JSX.Element {
               key={movie.title}
               layout="compact"
               children={movie.overview}
-              isBookmarked={bookmarkedMovies.includes(movie.id)}
+              isBookmarked={bookmarkIds.includes(movie.id)}
               onBookmarkClick={() => handleBookmarkClick(movie.id)}
               {...movie}
             />
