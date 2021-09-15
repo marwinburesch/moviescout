@@ -17,7 +17,7 @@ export default function Bookmarks(): JSX.Element {
         </Header>
       </section>
       <main className={styles.cardWrapper}>
-        {errorMessage && <p>{errorMessage}</p>}
+        {errorMessage && <p className={styles.error}>{errorMessage}</p>}
         {!errorMessage && isLoading && <p>Loading...</p>}
         {bookmarkedMovies &&
           bookmarkedMovies.length > 0 &&

@@ -26,3 +26,8 @@
   gap: 1em;
   overflow: scroll;
 }
+
+.error {
+  text-align: center;
+  color: var(--color-error);
+}
