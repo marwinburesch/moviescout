@@ -12,8 +12,15 @@ export default function useFetch<T>(url: string): {
 
   function refetch() {
     fetch(url)
-      .then((response) => response.json())
-      .then((response) => setData(response))
+      .then((response) => {
+        if (response.status === 404) {
+          setErrorMessage('Movie not found');
+        }
+        return response.json();
+      })
+      .then((response) => {
+        setData(response);
+      })
       .catch((error) => setErrorMessage(error.toString()));
   }
 
