@@ -2,6 +2,7 @@ import { Router } from 'express';
 import {
   getLatestMovies,
   getMovie,
+  getMovies,
   getMoviesByGenre,
   getPopularMovies,
   searchMovie,
@@ -56,6 +57,24 @@ router.get('/search', async (req, res) => {
   }
   const movies = await searchMovie(query);
   res.json(movies);
+});
+
+router.get('/list', async (req, res) => {
+  const { ids } = req.query;
+  if (!ids) {
+    res.status(400).json({ message: 'Ids are required' });
+    return;
+  } else if (typeof ids !== 'string') {
+    res.status(400).json({ message: 'Ids must be a string' });
+    return;
+  }
+  const idList = ids.split(',');
+  try {
+    const movies = await getMovies(idList);
+    res.json(movies);
+  } catch (err) {
+    res.status(404).json({ error: 'Movie/s not found' });
+  }
 });
 
 router.get('/:id', async (req, res) => {

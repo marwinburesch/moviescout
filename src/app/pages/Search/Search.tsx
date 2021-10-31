@@ -5,12 +5,14 @@ import Header from '../../components/Header/Header';
 import Navigation from '../../components/Navigation/Navigation';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import TagGroup from '../../components/TagGroup/TagGroup';
+import useBookmarks from '../../hooks/useBookmarks';
 import useSearchMovies from '../../hooks/useSearchMovies';
 import styles from './Search.module.css';
 
 export default function Search(): JSX.Element {
   const [searchValue, setSearchValue] = useState('');
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const { bookmarkIds, handleBookmarkClick } = useBookmarks();
 
   const { movies } = useSearchMovies(searchValue, activeTag);
 
@@ -56,7 +58,8 @@ export default function Search(): JSX.Element {
               image={movie.image}
               layout="detail"
               genres={movie.genres}
-              onBookmarkClick={() => console.log('bookmark')}
+              onBookmarkClick={handleBookmarkClick}
+              isBookmarked={bookmarkIds.includes(movie.id)}
             >
               {movie.overview}
             </Card>

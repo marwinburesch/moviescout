@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 import Navigation from '../../components/Navigation/Navigation';
@@ -6,21 +6,14 @@ import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 import useLatestMovies from '../../hooks/useLatestMovies';
 import useTopFiveMovies from '../../hooks/useTopFiveMovies';
+import useBookmarks from '../../hooks/useBookmarks';
 
 export default function Home(): JSX.Element {
-  const [bookmarked, setBookmarked] = useState<number[]>([436969, 675445]);
+  const { bookmarkIds, handleBookmarkClick } = useBookmarks();
 
   const { latestMovies } = useLatestMovies();
 
   const { topFiveMovies } = useTopFiveMovies();
-
-  function handleBookmarkClick(id: number) {
-    if (bookmarked.includes(id)) {
-      setBookmarked(bookmarked.filter((element) => element !== id));
-    } else {
-      setBookmarked([...bookmarked, id]);
-    }
-  }
 
   return (
     <div className={styles.container}>
@@ -34,7 +27,7 @@ export default function Home(): JSX.Element {
                 layout="wide"
                 {...movie}
                 children={movie.overview}
-                isBookmarked={bookmarked.includes(movie.id)}
+                isBookmarked={bookmarkIds.includes(movie.id)}
                 onBookmarkClick={handleBookmarkClick}
               />
             );
@@ -56,7 +49,7 @@ export default function Home(): JSX.Element {
                   layout="detail"
                   {...movie}
                   children={movie.overview}
-                  isBookmarked={bookmarked.includes(movie.id)}
+                  isBookmarked={bookmarkIds.includes(movie.id)}
                   onBookmarkClick={handleBookmarkClick}
                 />
               );

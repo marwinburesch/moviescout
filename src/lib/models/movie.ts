@@ -70,6 +70,19 @@ export async function getMovie(id: string): Promise<Movie> {
   };
 }
 
+export async function getMovies(ids: string[]): Promise<Movie[]> {
+  const fetchedMovies = Promise.all(
+    ids.map((id) => {
+      try {
+        return getMovie(id);
+      } catch (error) {
+        throw new Error(error);
+      }
+    })
+  );
+  return fetchedMovies;
+}
+
 export async function searchMovie(
   query: string,
   genre?: string
